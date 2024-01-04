@@ -1,0 +1,13 @@
+@import "../MainVar/mainVars.scss";
+* {
+  margin: 0;
+}
+.App {
+  @include textCenterCol;
+}
+
+.cardsList-container {
+  @include textCenterCol;
+  padding: 10px;
+  width: 100%;
+}

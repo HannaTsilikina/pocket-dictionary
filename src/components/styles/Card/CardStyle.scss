@@ -1,0 +1,12 @@
+@import "../MainVar/mainVars.scss";
+
+.card-container {
+  @include textGrid;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(166, 198, 254);
+  font-size: 24px;
+  width: 100%;
+}

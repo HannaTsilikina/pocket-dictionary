@@ -1,12 +1,14 @@
-import "./App.css";
+import "../src/components/styles/AppMain/styleAppMain.css";
 import WordsList from "./components/WordsList";
 import CardsList from "./components/CardsList";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      <WordsList></WordsList>
-      <CardsList></CardsList>
+      <Header />
+      <WordsList />
+      <CardsList />
     </div>
   );
 }

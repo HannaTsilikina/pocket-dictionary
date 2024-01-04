@@ -1,0 +1,21 @@
+$mainViol: #9109ac;
+$mainWhite: #f0e7f2;
+
+@mixin textCenterRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@mixin textCenterCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@mixin textGrid {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+}
