@@ -1,0 +1,51 @@
+@import "../MainVar/mainVars.scss";
+
+.header-container {
+  @include textCenterRow;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+  padding: 30px 20px;
+  border-bottom: 1px solid;
+  box-sizing: border-box;
+  border-color: $mainColor;
+}
+.header-hrefs {
+  @include mainTextBlack;
+  font-size: 18px;
+  text-decoration: none;
+  color: $BlackColor;
+}
+
+nav {
+  @include textCenterRow;
+  gap: 100px;
+}
+.button-main {
+  @include button-main;
+}
+.button-secondary {
+  @include button-secondary;
+}
+.log {
+  @include textCenterRow;
+  gap: 15px;
+}
+.logo {
+  @include textCenterRow;
+  gap: 3px;
+  max-width: 20%;
+}
+.image-logo {
+  width: 30%;
+  height: 30%;
+}
+
+.text-logo {
+  @include mainTextBlack;
+  font-size: 24px;
+  color: $mainColor;
+}
+a {
+  text-decoration: none;
+}

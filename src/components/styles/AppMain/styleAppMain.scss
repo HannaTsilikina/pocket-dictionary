@@ -4,10 +4,12 @@
 }
 .App {
   @include textCenterCol;
+  max-width: 100%;
 }
 
 .cardsList-container {
   @include textCenterCol;
-  padding: 10px;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
 }

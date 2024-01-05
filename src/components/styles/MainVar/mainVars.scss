@@ -1,5 +1,21 @@
-$mainViol: #9109ac;
-$mainWhite: #f0e7f2;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Lato:wght@400;700;900&family=Manrope:wght@400;700&display=swap");
+$mainColor: #093fac;
+$secondColor: #f4f4fb;
+$BlackColor: #010306;
+
+@mixin mainTextRegular {
+  font-family: Lato;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin mainTextBold {
+  font-family: Lato;
+  font-weight: 700;
+}
+@mixin mainTextBlack {
+  font-family: Lato;
+  font-weight: 900;
+}
 
 @mixin textCenterRow {
   display: flex;
@@ -18,4 +34,53 @@ $mainWhite: #f0e7f2;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
+}
+@mixin button-main {
+  @include mainTextBold;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: $mainColor;
+  color: $secondColor;
+}
+
+@mixin button-secondary {
+  @include mainTextBold;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid $mainColor;
+  background-color: $secondColor;
+  color: $mainColor;
+}
+a:hover {
+  color: $mainColor;
+}
+a:active {
+  text-decoration: underline;
+}
+.button-main:hover {
+  color: $BlackColor;
+  background-color: $secondColor;
+}
+.button-main:active {
+  text-decoration: underline;
+  background-color: $secondColor;
+}
+.button-secondary:hover {
+  color: $BlackColor;
+  border: 1px solid $secondColor;
+}
+.button-secondary:active {
+  text-decoration: underline;
+  background-color: $secondColor;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 18px;
+}
+h4 {
+  font-size: 14px;
 }

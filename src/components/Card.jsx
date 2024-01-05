@@ -1,11 +1,21 @@
 function Card(props) {
-  return (
-    <div className="card-container">
-      <h2>{props.name}</h2>
-      <h3>{props.transcription}</h3>
-      <h3> {props.translation}</h3>
-      <h4> Категория: {props.topic}</h4>
-    </div>
-  );
+  if (!props.main)
+    return (
+      <div className="card-container">
+        <h3>{props.name}</h3>
+        <h3>{props.transcription}</h3>
+        <h3> {props.translation}</h3>
+        <h4> {props.topic}</h4>
+      </div>
+    );
+  else
+    return (
+      <div className="card-main-container">
+        <h3>{props.name}</h3>
+        <h3>{props.transcription}</h3>
+        <h3> {props.translation}</h3>
+        <h3> Категория: {props.topic}</h3>
+      </div>
+    );
 }
 export default Card;

@@ -105,6 +105,7 @@ let listOfWords = [
 let listOfCards = [];
 listOfCards.push(
   <Card
+    main={true}
     name="Слово"
     transcription="Транскрипция"
     translation="Перевод"
