@@ -3,7 +3,7 @@
     "main.css": "/HannaTsilikina/pocket-dictionary/static/css/main.15236daf.css",
     "main.js": "/HannaTsilikina/pocket-dictionary/static/js/main.7fc5327b.js",
     "static/js/787.f30bcd89.chunk.js": "/HannaTsilikina/pocket-dictionary/static/js/787.f30bcd89.chunk.js",
-    "static/media/logo.png": "/HannaTsilikina/pocket-dictionary/static/media/logo.be3468b9b0fb6ba18f4c.png",
+    "static/media/logo.png": "./static/media/logo.be3468b9b0fb6ba18f4c.png",
     "index.html": "/HannaTsilikina/pocket-dictionary/index.html",
     "main.15236daf.css.map": "/HannaTsilikina/pocket-dictionary/static/css/main.15236daf.css.map",
     "main.7fc5327b.js.map": "/HannaTsilikina/pocket-dictionary/static/js/main.7fc5327b.js.map",
@@ -14,3 +14,6 @@
     "static/js/main.7fc5327b.js"
   ]
 }
+
+
+
