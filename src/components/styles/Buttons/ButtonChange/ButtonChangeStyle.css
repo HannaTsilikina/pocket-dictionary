@@ -39,13 +39,14 @@ h4 {
   font-size: 14px;
 }
 
-.buttonSave {
+.buttonChange {
   font-family: Lato;
   font-weight: 700;
   font-size: 14px;
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: #093fac;
-  color: #f4f4fb;
+  border: 1px solid #093fac;
+  background-color: #f4f4fb;
+  color: #093fac;
   font-size: 12px;
-}/*# sourceMappingURL=ButtonSaveStyle.css.map */
+}/*# sourceMappingURL=ButtonChangeStyle.css.map */

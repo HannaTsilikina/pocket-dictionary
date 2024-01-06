@@ -113,6 +113,16 @@ listOfCards.push(
     id=""
   />
 );
+listOfCards.push(
+  <Card
+    new={true}
+    name="Слово"
+    transcription="Транскрипция"
+    translation="Перевод"
+    topic="Категория"
+    id=""
+  />
+);
 listOfWords.forEach((element) => {
   listOfCards.push(
     <Card

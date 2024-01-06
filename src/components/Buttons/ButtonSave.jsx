@@ -1,4 +1,4 @@
-import "../styles/Buttons/ButtonAdd/ButtonAddStyle.scss";
+import "../styles/Buttons/ButtonSave/ButtonSaveStyle.scss";
 
 function ButtonSave(props) {
   return <button className="buttonSave"> Save </button>;

@@ -1,4 +1,4 @@
-import "../styles/Buttons/ButtonAdd/ButtonAddStyle.scss";
+import "../styles/Buttons/ButtonDelete/ButtonDeleteStyle.scss";
 
 function ButtonDelete(props) {
   return <button className="buttonDelete"> Delete</button>;

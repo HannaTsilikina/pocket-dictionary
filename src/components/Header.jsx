@@ -19,13 +19,19 @@ function Header() {
           className="header-hrefs"
           href="http://localhost:3000/HannaTsilikina/pocket-dictionary"
         >
-          About
+          Start to learn
         </a>
         <a
-          className="header-hrefs"
+          className="header-hrefs active"
           href="http://localhost:3000/HannaTsilikina/pocket-dictionary"
         >
-          Updates
+          My dictionary
+        </a>
+        <a
+          className="header-hrefs "
+          href="http://localhost:3000/HannaTsilikina/pocket-dictionary"
+        >
+          About
         </a>
         <a
           className="header-hrefs"

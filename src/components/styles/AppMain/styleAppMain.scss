@@ -13,3 +13,7 @@
   box-sizing: border-box;
   padding: 0 20px;
 }
+.buttons-container {
+  @include textCenterRow;
+  gap: 10px;
+}

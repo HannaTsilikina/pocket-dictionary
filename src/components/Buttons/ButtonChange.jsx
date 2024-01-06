@@ -1,4 +1,4 @@
-import "../styles/Buttons/ButtonAdd/ButtonAddStyle.scss";
+import "../styles/Buttons/ButtonChange/ButtonChangeStyle.scss";
 
 function ButtonChange(props) {
   return <button className="buttonChange"> Change</button>;
