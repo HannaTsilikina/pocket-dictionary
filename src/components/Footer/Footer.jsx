@@ -1,4 +1,4 @@
-import "../components/styles/Footer/FooterStyle.scss";
+import "./FooterStyle.scss";
 function Footer() {
   return (
     <div className="footer-container">
@@ -9,7 +9,7 @@ function Footer() {
       >
         <img
           className="image-logo"
-          src={require("../assets/images/logo.png")}
+          src={require("../../assets/images/logo.png")}
           alt="logo"
         ></img>
         <span className="text-logo">PocketEnglish</span>

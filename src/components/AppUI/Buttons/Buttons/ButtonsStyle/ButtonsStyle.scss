@@ -1,0 +1,14 @@
+@import "../../../../styles/MainVar/mainVars.scss";
+.buttonChange {
+  @include button-secondary;
+  font-size: 12px;
+}
+
+.buttonDelete {
+  @include button-delete;
+}
+
+.buttonSave {
+  @include button-main;
+  font-size: 12px;
+}

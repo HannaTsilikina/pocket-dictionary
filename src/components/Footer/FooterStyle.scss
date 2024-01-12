@@ -1,36 +1,17 @@
-@import "../MainVar/mainVars.scss";
+@import "../styles//MainVar/mainVars.scss";
 
-.header-container {
+.footer-container {
   @include textCenterRow;
   justify-content: space-between;
   width: 100%;
   gap: 10px;
-  padding: 30px 20px;
+  padding: 80px 50px 20px 20px;
   border-bottom: 1px solid;
   box-sizing: border-box;
   border-color: $mainColor;
-}
-.header-hrefs {
-  @include mainTextBlack;
-  font-size: 18px;
-  text-decoration: none;
-  color: $blackColor;
+  background-color: $secondColor;
 }
 
-nav {
-  @include textCenterRow;
-  gap: 7vw;
-}
-.button-main {
-  @include button-main;
-}
-.button-secondary {
-  @include button-secondary;
-}
-.log {
-  @include textCenterRow;
-  gap: 15px;
-}
 .logo {
   @include textCenterRow;
   gap: 3px;
@@ -46,9 +27,26 @@ nav {
   font-size: 24px;
   color: $mainColor;
 }
+
 a {
   text-decoration: none;
 }
-.active {
+.footer-hrefs:hover {
+  color: $mainColor;
+}
+.footer-hrefs:active {
   text-decoration: underline;
+}
+
+.footer-links {
+  @include textCenterRow;
+  padding: 10px 50px;
+  gap: 50px;
+  a {
+    @include mainTextBlack;
+    font-size: 18px;
+    text-decoration: none;
+    color: $blackColor;
+    opacity: 70%;
+  }
 }

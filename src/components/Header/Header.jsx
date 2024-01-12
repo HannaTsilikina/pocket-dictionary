@@ -1,4 +1,4 @@
-import "./styles/Header/HeaderStyle.scss";
+import "./HeaderStyle.scss";
 function Header() {
   return (
     <div className="header-container">
@@ -9,7 +9,7 @@ function Header() {
       >
         <img
           className="image-logo"
-          src={require("../assets/images/logo.png")}
+          src={require("../../assets/images/logo.png")}
           alt="logo"
         ></img>
         <span className="text-logo">PocketEnglish</span>

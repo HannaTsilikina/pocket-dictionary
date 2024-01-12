@@ -1,8 +1,8 @@
-import "../src/components/styles/AppMain/styleAppMain.css";
+import "./components/styles/styleAppMain.css";
 
-import CardsList from "./components/CardsList";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import CardsList from "./components/CardList/CardsList";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
 function App() {
   return (

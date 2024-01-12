@@ -1,7 +1,24 @@
-import Card from "./Card";
-import "../components/styles/Card/CardStyle.scss";
+import Card from "../Card/Card";
+import "../../components/styles/styleAppMain.scss";
+import "../Card/CardStyle.scss";
 
 let listOfWords = [
+  {
+    main: true,
+    english: "Слово",
+    transcription: "Транскрипция",
+    russian: "Перевод",
+    tags: "Категория",
+    id: "",
+  },
+  {
+    new: true,
+    english: "Слово",
+    transcription: "Транскрипция",
+    russian: "Перевод",
+    tags: "Категория",
+    id: "",
+  },
   {
     id: "15092",
     english: "plane",
@@ -102,35 +119,16 @@ let listOfWords = [
   },
 ];
 
-let listOfCards = [];
-listOfCards.push(
-  <Card
-    main={true}
-    name="Слово"
-    transcription="Транскрипция"
-    translation="Перевод"
-    topic=""
-    id=""
-  />
-);
-listOfCards.push(
-  <Card
-    new={true}
-    name="Слово"
-    transcription="Транскрипция"
-    translation="Перевод"
-    topic="Категория"
-    id=""
-  />
-);
-listOfWords.forEach((element) => {
-  listOfCards.push(
+let listOfCards = listOfWords.map((element) => {
+  return (
     <Card
+      key={element.id}
       name={element.english}
       transcription={element.transcription}
       translation={element.russian}
       topic={element.tags}
-      id={element.id}
+      new={element.new}
+      main={element.main}
     />
   );
 });
