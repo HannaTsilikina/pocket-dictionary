@@ -1,6 +1,7 @@
 @import "../styles/MainVar/mainVars.scss";
 * {
   margin: 0;
+  font-family: Lato;
 }
 .App {
   @include textCenterCol;

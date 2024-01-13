@@ -12,3 +12,26 @@
   @include button-main;
   font-size: 12px;
 }
+.buttonSave:hover {
+  color: $blackColor;
+  background-color: $secondColor;
+}
+.buttonSave:active {
+  text-decoration: underline;
+  background-color: $secondColor;
+}
+.buttonChange:hover {
+  color: $blackColor;
+  border: 1px solid $secondColor;
+}
+.buttonChange:active {
+  text-decoration: underline;
+  background-color: $secondColor;
+}
+
+.buttonDelete:hover {
+  text-decoration: underline;
+}
+.buttonDelete:active {
+  font-weight: 900;
+}

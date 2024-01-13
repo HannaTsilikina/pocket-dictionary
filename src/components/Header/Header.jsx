@@ -1,12 +1,10 @@
 import "./HeaderStyle.scss";
+import { Link, Outlet } from "react-router-dom";
+
 function Header() {
   return (
     <div className="header-container">
-      <a
-        className="logo"
-        href="http://localhost:3000/HannaTsilikina/pocket-dictionary"
-        alt="logo-href"
-      >
+      <a className="logo" href="/" alt="logo-href">
         <img
           className="image-logo"
           src={require("../../assets/images/logo.png")}
@@ -15,35 +13,24 @@ function Header() {
         <span className="text-logo">PocketEnglish</span>
       </a>
       <nav>
-        <a
-          className="header-hrefs"
-          href="http://localhost:3000/HannaTsilikina/pocket-dictionary"
-        >
+        <Link className="header-hrefs" to="/learn">
           Start to learn
-        </a>
-        <a
-          className="header-hrefs active"
-          href="http://localhost:3000/HannaTsilikina/pocket-dictionary"
-        >
+        </Link>
+        <Link className="header-hrefs active" to="/">
           My dictionary
-        </a>
-        <a
-          className="header-hrefs "
-          href="http://localhost:3000/HannaTsilikina/pocket-dictionary"
-        >
+        </Link>
+        <Link className="header-hrefs " to="/">
           About
-        </a>
-        <a
-          className="header-hrefs"
-          href="http://localhost:3000/HannaTsilikina/pocket-dictionary"
-        >
+        </Link>
+        <Link className="header-hrefs" to="/">
           Help
-        </a>
+        </Link>
       </nav>
       <div className="log">
         <button className="button-main"> Sign in</button>
         <button className="button-secondary"> Sign up</button>
       </div>
+      <Outlet />
     </div>
   );
 }

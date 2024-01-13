@@ -12,14 +12,6 @@ let listOfWords = [
     id: "",
   },
   {
-    new: true,
-    english: "Слово",
-    transcription: "Транскрипция",
-    russian: "Перевод",
-    tags: "Категория",
-    id: "",
-  },
-  {
     id: "15092",
     english: "plane",
     transcription: "[pleɪn]",
