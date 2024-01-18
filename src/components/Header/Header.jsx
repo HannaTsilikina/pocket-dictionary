@@ -13,7 +13,7 @@ function Header() {
         <span className="text-logo">PocketEnglish</span>
       </a>
       <nav>
-        <Link className="header-hrefs" to="/learn">
+        <Link className="header-hrefs" to="/train">
           Start to learn
         </Link>
         <Link className="header-hrefs active" to="/">

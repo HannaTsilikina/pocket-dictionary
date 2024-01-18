@@ -1,0 +1,14 @@
+@import "./../../assets/styles/MainVar/mainVars.scss";
+
+.train-arr {
+  max-width: 30px;
+  max-height: 15px;
+}
+.trainMode-container {
+  @include textCenterRow;
+  gap: 20%;
+  width: 70vw;
+}
+.TrainMode-counter {
+  padding: 20px;
+}

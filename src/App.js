@@ -1,10 +1,11 @@
-import "./components/styles/styleAppMain.scss";
+import "./assets/styles/styleAppMain.scss";
 import { Routes, Route } from "react-router-dom";
 import CardsList from "./components/CardList/CardsList";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import LearnCard from "./components/LearnCard/LearnCard";
 import React from "react";
+import TrainMode from "./components/TrainMode/TrainMode";
+import listOfWords from "./store/store";
 
 function App() {
   return (
@@ -16,15 +17,8 @@ function App() {
 
           <Route index element={<CardsList />} />
           <Route
-            path="/learn"
-            element={
-              <LearnCard
-                english="plane"
-                russian="самолет"
-                transcription="[pleɪn]"
-                key="23"
-              />
-            }
+            path="/train"
+            element={<TrainMode array={listOfWords} number={0} />}
           />
           <Route path="*" element={<CardsList />} />
 
