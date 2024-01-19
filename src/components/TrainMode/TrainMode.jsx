@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
 import "./TrainMode.scss";
 import LearnCard from "../LearnCard/LearnCard";
 import listOfWords from "../../store/store";
@@ -15,7 +16,6 @@ export default function TrainMode(props) {
       setNumber(number - 1);
     }
   };
-  useEffect(() => console.log(`Нажато ${number} раз`));
 
   return (
     <>
@@ -27,8 +27,9 @@ export default function TrainMode(props) {
             alt="arrow"
           />
         </button>
-
-        <LearnCard array={listOfWords} numberCard={number} />
+        <div className="react-card-flip">
+          <LearnCard array={listOfWords} numberCard={number} />
+        </div>
         <button className="button-secondary" onClick={handleChangeNumber}>
           <img
             className="train-arr"

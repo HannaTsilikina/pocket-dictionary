@@ -6,9 +6,13 @@
 }
 .trainMode-container {
   @include textCenterRow;
-  gap: 20%;
+  gap: 10%;
   width: 70vw;
+  margin-top: 20px;
 }
 .TrainMode-counter {
-  padding: 20px;
+  padding-bottom: 20px;
+}
+.react-card-flip {
+  width: 20vw;
 }
