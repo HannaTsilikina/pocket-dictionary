@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-import Button from "../AppUI/Buttons/Button";
 import "./NotFound.scss";
 import { Link } from "react-router-dom";
 
@@ -12,7 +10,7 @@ export default function NotFound() {
         <img
           className="image-notFound"
           src={require("../../assets/images/ugly-cat.png")}
-          alt="image Not Found"
+          alt="imageNotFound"
         ></img>
       </div>
       <Link className="notFound" to="/">
