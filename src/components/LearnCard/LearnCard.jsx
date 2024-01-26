@@ -5,7 +5,7 @@ function LearnCard(props) {
     <div key={props.card.id} className="learnCard-container">
       <h3 className="main">{props.card.english}</h3>
       <span>{props.card.transcription}</span>
-      {props.card.checked ? (
+      {props.checked ? (
         <>
           <span className="translation-word">{props.card.russian}</span>
         </>
