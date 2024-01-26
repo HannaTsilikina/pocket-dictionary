@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/HannaTsilikina/pocket-dictionary/static/css/main.700fb618.css",
-    "main.js": "/HannaTsilikina/pocket-dictionary/static/js/main.b3e4655b.js",
-    "static/js/787.f30bcd89.chunk.js": "/HannaTsilikina/pocket-dictionary/static/js/787.f30bcd89.chunk.js",
-    "static/media/logo.png": "/HannaTsilikina/pocket-dictionary/static/media/logo.be3468b9b0fb6ba18f4c.png",
-    "static/media/ugly-cat.png": "/HannaTsilikina/pocket-dictionary/static/media/ugly-cat.2014a9e9077b3593e7bb.png",
-    "index.html": "/HannaTsilikina/pocket-dictionary/index.html",
-    "main.700fb618.css.map": "/HannaTsilikina/pocket-dictionary/static/css/main.700fb618.css.map",
-    "main.b3e4655b.js.map": "/HannaTsilikina/pocket-dictionary/static/js/main.b3e4655b.js.map",
-    "787.f30bcd89.chunk.js.map": "/HannaTsilikina/pocket-dictionary/static/js/787.f30bcd89.chunk.js.map"
+    "main.css": "./static/css/main.700fb618.css",
+    "main.js": "./static/js/main.b3e4655b.js",
+    "static/js/787.f30bcd89.chunk.js": "./static/js/787.f30bcd89.chunk.js",
+    "static/media/logo.png": "./static/media/logo.be3468b9b0fb6ba18f4c.png",
+    "static/media/ugly-cat.png": "./static/media/ugly-cat.2014a9e9077b3593e7bb.png",
+    "index.html": "./index.html",
+    "main.700fb618.css.map": "./static/css/main.700fb618.css.map",
+    "main.b3e4655b.js.map": "./static/js/main.b3e4655b.js.map",
+    "787.f30bcd89.chunk.js.map": "./static/js/787.f30bcd89.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.700fb618.css",
