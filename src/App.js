@@ -1,11 +1,12 @@
 import "./assets/styles/styleAppMain.scss";
 import { Routes, Route } from "react-router-dom";
-import CardsList from "./components/CardList/CardsList";
+import CardList from "./components/CardList/CardList";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import React from "react";
 import TrainMode from "./components/TrainMode/TrainMode";
 import listOfWords from "./store/store";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
@@ -15,12 +16,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Header />}></Route>
 
-          <Route index element={<CardsList />} />
+          <Route index element={<CardList />} />
           <Route
-            path="/train"
+            path="/game"
             element={<TrainMode array={listOfWords} number={0} />}
           />
-          <Route path="*" element={<CardsList />} />
+          <Route path="*" element={<NotFound />} />
 
           <Route path="/" element={<Footer />}></Route>
         </Routes>

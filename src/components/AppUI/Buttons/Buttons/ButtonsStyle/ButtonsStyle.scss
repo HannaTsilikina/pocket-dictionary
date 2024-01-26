@@ -2,15 +2,18 @@
 .buttonChange {
   @include button-secondary;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .buttonDelete {
   @include button-delete;
+  cursor: pointer;
 }
 
 .buttonSave {
   @include button-main;
   font-size: 12px;
+  cursor: pointer;
 }
 .buttonSave:hover {
   color: $blackColor;

@@ -40,8 +40,10 @@ $blackColor: #010306;
   font-size: 14px;
   padding: 10px 20px;
   border-radius: 10px;
+  border-color: $mainColor;
   background-color: $mainColor;
   color: $secondColor;
+  cursor: pointer;
 }
 
 @mixin button-secondary {
@@ -52,6 +54,7 @@ $blackColor: #010306;
   border: 1px solid $mainColor;
   background-color: $secondColor;
   color: $mainColor;
+  cursor: pointer;
 }
 @mixin button-delete {
   @include mainTextBold;

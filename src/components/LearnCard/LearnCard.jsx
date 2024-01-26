@@ -1,22 +1,17 @@
-// import { useEffect, useState } from "react";
-// import ReactCardFlip from "react-card-flip";
 import "./LearnCard.scss";
 
 function LearnCard(props) {
   return (
-    <div key={props.array[props.numberCard].id} className="learnCard-container">
-      <h3 className="main">{props.array[props.numberCard].english}</h3>
-      <span>{props.array[props.numberCard].transcription}</span>
-
-      {props.checked ? (
+    <div key={props.card.id} className="learnCard-container">
+      <h3 className="main">{props.card.english}</h3>
+      <span>{props.card.transcription}</span>
+      {props.card.checked ? (
         <>
-          <span className="translation-word">
-            {props.array[props.numberCard].russian}
-          </span>
+          <span className="translation-word">{props.card.russian}</span>
         </>
       ) : (
         <button className="buttonSave" onClick={props.onClick}>
-          check
+          {"check "}
         </button>
       )}
     </div>

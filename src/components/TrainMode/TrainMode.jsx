@@ -2,8 +2,9 @@ import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import "./TrainMode.scss";
 import LearnCard from "../LearnCard/LearnCard";
-import listOfWords from "../../store/store";
+
 import "../../assets/images/right-arrow.png";
+import listOfWords from "../../store/store";
 
 export default function TrainMode(props) {
   const [isFlipped, setFlipped] = useState(false);
@@ -40,11 +41,10 @@ export default function TrainMode(props) {
             flipDirection="horizontal"
           >
             <LearnCard
-              array={listOfWords}
-              numberCard={number}
+              card={listOfWords[number]}
               onClick={handleChangeFlipped}
             />
-            <LearnCard array={listOfWords} numberCard={number} checked={true} />
+            <LearnCard card={listOfWords[number]} checked={true} />
           </ReactCardFlip>
         </div>
         <button className="button-secondary" onClick={handleChangeNumber}>

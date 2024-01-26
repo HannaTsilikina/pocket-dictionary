@@ -9,6 +9,9 @@
   border-bottom: 1px solid;
   box-sizing: border-box;
   border-color: $mainColor;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 .header-hrefs {
   @include mainTextBlack;

@@ -1,0 +1,31 @@
+@import "./../../assets/styles/styleAppMain.scss";
+@import "./../../assets/styles/MainVar/mainVars.scss";
+
+.notFound-container {
+  @include textCenterCol;
+  gap: 5vh;
+  width: 70vw;
+  margin: 4em 1em;
+
+  h1 {
+    color: $mainColor;
+  }
+}
+
+.notFound-main {
+  @include textCenterRow;
+  max-width: 90vw;
+}
+.image-notFound {
+  width: 30vw;
+}
+.span-notFound {
+  color: $blackColor;
+  @include mainTextBold;
+  font-size: 32px;
+  font-style: italic;
+  max-width: 30%;
+}
+.button-main {
+  @include button-main;
+}
