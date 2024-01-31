@@ -1,15 +1,14 @@
-import webpack from "webpack";
-
-const ASSET_PATH = process.env.ASSET_PATH || "./";
-
-export default {
-  output: {
-    publicPath: ASSET_PATH,
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
+      },
+    ],
   },
-
-  plugins: [
-    new webpack.DefinePlugin({
-      "process.env.ASSET_PATH": JSON.stringify(ASSET_PATH),
-    }),
-  ],
 };

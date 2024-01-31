@@ -1,17 +1,14 @@
 import "./FooterStyle.scss";
+import logo from "../../assets/images/logo.png";
 function Footer() {
   return (
-    <div className="footer-container">
+    <footer className="footer-container">
       <a
         className="logo"
         href="http://localhost:3000/HannaTsilikina/pocket-dictionary"
         alt="logo-href"
       >
-        <img
-          className="image-logo"
-          src={require("../../assets/images/logo.png")}
-          alt="logo"
-        ></img>
+        <img className="image-logo" src={logo} alt="logo"></img>
         <span className="text-logo">PocketEnglish</span>
       </a>
       <div className="footer-links">
@@ -25,7 +22,7 @@ function Footer() {
           Useful links
         </a>
       </div>
-    </div>
+    </footer>
   );
 }
 export default Footer;

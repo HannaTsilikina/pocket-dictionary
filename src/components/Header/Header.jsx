@@ -1,15 +1,12 @@
 import "./HeaderStyle.scss";
 import { Link, Outlet } from "react-router-dom";
+import logo from "../../assets/images/logo.png";
 
 function Header() {
   return (
-    <div className="header-container">
+    <header className="header-container">
       <a className="logo" href="/" alt="logo-href">
-        <img
-          className="image-logo"
-          src={require("../../assets/images/logo.png")}
-          alt="logo"
-        ></img>
+        <img className="image-logo" src={logo} alt="logo"></img>
         <span className="text-logo">PocketEnglish</span>
       </a>
       <nav>
@@ -31,7 +28,7 @@ function Header() {
         <button className="button-secondary"> Sign up</button>
       </div>
       <Outlet />
-    </div>
+    </header>
   );
 }
 export default Header;

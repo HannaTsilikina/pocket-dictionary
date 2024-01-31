@@ -34,7 +34,7 @@ let listOfCards;
 
 function CardsList() {
   return (
-    <div className="cardsList-container">
+    <main className="cardsList-container">
       <Card
         name="Слово"
         transcription="Транскрипция"
@@ -43,7 +43,7 @@ function CardsList() {
         main={true}
       />
       {listOfCards}
-    </div>
+    </main>
   );
 }
 export default CardsList;

@@ -1,40 +1,40 @@
 @import "../../../../../assets/styles/MainVar/mainVars.scss";
-.buttonChange {
+.button-change {
   @include button-secondary;
   font-size: 12px;
   cursor: pointer;
 }
 
-.buttonDelete {
+.button-delete {
   @include button-delete;
   cursor: pointer;
 }
 
-.buttonSave {
+.button-save {
   @include button-main;
   font-size: 12px;
   cursor: pointer;
 }
-.buttonSave:hover {
+.button-save:hover {
   color: $blackColor;
   background-color: $secondColor;
 }
-.buttonSave:active {
+.button-save:active {
   text-decoration: underline;
   background-color: $secondColor;
 }
-.buttonChange:hover {
+.button-change:hover {
   color: $blackColor;
   border: 1px solid $secondColor;
 }
-.buttonChange:active {
+.button-change:active {
   text-decoration: underline;
   background-color: $secondColor;
 }
 
-.buttonDelete:hover {
+.button-celete:hover {
   text-decoration: underline;
 }
-.buttonDelete:active {
+.button-delete:active {
   font-weight: 900;
 }

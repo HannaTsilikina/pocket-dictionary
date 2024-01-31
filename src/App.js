@@ -14,16 +14,12 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<Header />}></Route>
-
           <Route index element={<CardList />} />
           <Route
             path="/game"
             element={<TrainMode array={listOfWords} number={0} />}
           />
           <Route path="*" element={<NotFound />} />
-
-          <Route path="/" element={<Footer />}></Route>
         </Routes>
         <Footer />
       </div>

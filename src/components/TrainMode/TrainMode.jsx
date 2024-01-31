@@ -5,6 +5,8 @@ import LearnCard from "../LearnCard/LearnCard";
 
 import "../../assets/images/right-arrow.png";
 import listOfWords from "../../store/store";
+import arrowRight from "../../assets/images/right-arrow.png";
+import arrowLeft from "../../assets/images/left-arrow.png";
 
 export default function TrainMode(props) {
   const [isFlipped, setFlipped] = useState(false);
@@ -25,14 +27,10 @@ export default function TrainMode(props) {
     setFlipped(!isFlipped);
   };
   return (
-    <>
-      <div className="trainMode-container">
+    <main className="trainmode-main">
+      <div className="trainmode-container">
         <button className="button-secondary" onClick={handleChangeNumberPrev}>
-          <img
-            className="train-arr"
-            src={require("../../assets/images/left-arrow.png")}
-            alt="arrow"
-          />
+          <img className="train-arr" src={arrowLeft} alt="arrow" />
         </button>
         <div className="react-card-flip">
           <ReactCardFlip
@@ -48,17 +46,13 @@ export default function TrainMode(props) {
           </ReactCardFlip>
         </div>
         <button className="button-secondary" onClick={handleChangeNumber}>
-          <img
-            className="train-arr"
-            src={require("../../assets/images/right-arrow.png")}
-            alt="arrow"
-          />
+          <img className="train-arr" src={arrowRight} alt="arrow" />
         </button>
       </div>
 
       <span className="TrainMode-counter">
         {number + 1}/{props.array.length}
       </span>
-    </>
+    </main>
   );
 }

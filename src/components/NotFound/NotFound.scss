@@ -1,7 +1,7 @@
 @import "./../../assets/styles/styleAppMain.scss";
 @import "./../../assets/styles/MainVar/mainVars.scss";
 
-.notFound-container {
+.notfound-container {
   @include textCenterCol;
   gap: 5vh;
   width: 70vw;
@@ -12,14 +12,14 @@
   }
 }
 
-.notFound-main {
+.notfound-main {
   @include textCenterRow;
   max-width: 90vw;
 }
-.image-notFound {
+.image-notfound {
   width: 30vw;
 }
-.span-notFound {
+.span-notfound {
   color: $blackColor;
   @include mainTextBold;
   font-size: 32px;

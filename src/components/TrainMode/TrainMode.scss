@@ -1,16 +1,18 @@
 @import "./../../assets/styles/MainVar/mainVars.scss";
-
+.trainmode-main {
+  @include textCenterCol;
+  margin: 5% 0%;
+}
 .train-arr {
   max-width: 30px;
   max-height: 15px;
 }
-.trainMode-container {
+.trainmode-container {
   @include textCenterRow;
   gap: 10%;
   width: 70vw;
-  margin-top: 20px;
 }
-.TrainMode-counter {
+.Trainmode-counter {
   padding-bottom: 20px;
 }
 .react-card-flip {

@@ -28,28 +28,28 @@ function Card(props) {
     return (
       <div className="card-container">
         <input
-          className="addedWord"
+          className="added-word"
           value={name}
           onChange={(e) => setName(e.target.value)}
         ></input>
         <input
-          className="addedWord"
+          className="added-word"
           value={transcription}
           onChange={(e) => setTranscription(e.target.value)}
         ></input>
         <input
-          className="addedWord"
+          className="added-word"
           value={translation}
           onChange={(e) => setTranslation(e.target.value)}
         ></input>
         <input
-          className="addedWord"
+          className="added-word"
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
         ></input>
         <div className="buttons-container">
-          <Button class="buttonSave" text="Save" onclick={handleEdit} />
-          <Button class="buttonDelete" text="Delete" onclick={handleDelete} />
+          <Button class="button-save" text="Save" onclick={handleEdit} />
+          <Button class="button-delete" text="Delete" onclick={handleDelete} />
         </div>
       </div>
     );
@@ -61,8 +61,8 @@ function Card(props) {
         <h3> {translation}</h3>
         <h4> {topic}</h4>
         <div className="buttons-container">
-          <Button class="buttonChange" text="Change" onclick={handleEdit} />
-          <Button class="buttonDelete" text="Delete" onclick={handleDelete} />
+          <Button class="button-change" text="Change" onclick={handleEdit} />
+          <Button class="button-delete" text="Delete" onclick={handleDelete} />
         </div>
       </div>
     );
