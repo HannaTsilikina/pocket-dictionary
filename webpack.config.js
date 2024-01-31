@@ -17,6 +17,11 @@ export default {
 };
 
 module.exports = {
+  output: {
+    publicPath: "auto",
+  },
+};
+module.exports = {
   module: {
     rules: [
       {
