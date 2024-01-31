@@ -1,5 +1,7 @@
-@import "./../../assets/styles/styleAppMain.scss";
-@import "./../../assets/styles/MainVar/mainVars.scss";
+@import "../../assets/styles/styleAppMain.scss";
+@import "../../assets/styles/colors.scss";
+@import "../../assets/styles/mixins.scss";
+@import "../../assets/styles/global.scss";
 
 .notfound-container {
   @include textCenterCol;

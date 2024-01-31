@@ -16,7 +16,7 @@ function Card(props) {
 
   if (!props.new && props.main)
     return (
-      <div className="card-main-container">
+      <div className="card-main-container" key={props.id}>
         <h3>{props.name}</h3>
         <h3>{props.transcription}</h3>
         <h3> {props.translation}</h3>
@@ -26,7 +26,7 @@ function Card(props) {
     );
   if (edit && !deleted)
     return (
-      <div className="card-container">
+      <div className="card-container" key={props.id}>
         <input
           className="added-word"
           value={name}
@@ -55,7 +55,7 @@ function Card(props) {
     );
   if (!edit && !deleted)
     return (
-      <div className="card-container">
+      <div className="card-container" key={props.id}>
         <h3>{name}</h3>
         <h3>{transcription}</h3>
         <h3> {translation}</h3>

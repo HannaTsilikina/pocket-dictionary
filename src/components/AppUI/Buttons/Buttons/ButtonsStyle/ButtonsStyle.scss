@@ -1,4 +1,6 @@
-@import "../../../../../assets/styles/MainVar/mainVars.scss";
+@import "../../../../../assets/styles/global.scss";
+@import "../../../../../assets/styles/colors.scss";
+@import "../../../../../assets/styles/mixins.scss";
 .button-change {
   @include button-secondary;
   font-size: 12px;

@@ -1,4 +1,6 @@
-@import "../styles/MainVar/mainVars.scss";
+@import "./global.scss";
+@import "./colors.scss";
+@import "./mixins.scss";
 * {
   margin: 0;
   font-family: Lato;
