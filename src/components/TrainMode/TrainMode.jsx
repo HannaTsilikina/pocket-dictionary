@@ -18,7 +18,6 @@ export default function TrainMode(props) {
 
   useEffect(() => {
     if (ref.current) {
-      console.log(ref.current, countOfLearnedWords);
       ref.current.focus();
     }
   }, [number]);
