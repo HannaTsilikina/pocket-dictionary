@@ -12,6 +12,7 @@
   box-sizing: border-box;
   border-color: $mainColor;
   position: sticky;
+  z-index: 100;
   top: 0;
   background-color: white;
 }

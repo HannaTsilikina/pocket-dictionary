@@ -11,17 +11,17 @@ export default function TrainMode(props) {
   const [isFlipped, setFlipped] = useState(false);
   const [number, setNumber] = useState(props.number);
   const [learned, setLearned] = useState(props.learned);
-  const [CountOfLearnedWords, setCountOfLearnedWords] = useState(0);
+  const [countOfLearnedWords, setCountOfLearnedWords] = useState(0);
   const [training, setTraining] = useState(false);
 
-  // const ref = useRef(null);
+  const ref = useRef();
 
-  // useEffect(() => {
-  //   if (ref.current) {
-  //     console.log(ref.current);
-  //     ref.current.focus();
-  //   }
-  // }, [number]);
+  useEffect(() => {
+    if (ref.current) {
+      console.log(ref.current, countOfLearnedWords);
+      ref.current.focus();
+    }
+  }, [number]);
 
   const handleChangeNumber = () => {
     setFlipped(false);
@@ -41,14 +41,14 @@ export default function TrainMode(props) {
     setFlipped(!isFlipped);
 
     setLearned(true);
-    if (CountOfLearnedWords < 12) {
-      setCountOfLearnedWords(CountOfLearnedWords + 1);
+    if (countOfLearnedWords < 12) {
+      setCountOfLearnedWords(countOfLearnedWords + 1);
     }
   };
   return training ? (
     <main className="trainmode-main">
       <h2 className="text-finish">
-        The training is over. <br /> Your result : {CountOfLearnedWords} learned
+        The training is over. <br /> Your result : {countOfLearnedWords} learned
         words
       </h2>
       <a href="/">
@@ -74,7 +74,7 @@ export default function TrainMode(props) {
                 card={listOfWords[number]}
                 onClick={handleChangeFlipped}
                 learned={learned}
-                // ref={ref}
+                ref={ref}
               />
               <LearnCard card={listOfWords[number]} checked={true} />
             </ReactCardFlip>
@@ -89,7 +89,7 @@ export default function TrainMode(props) {
         {number + 1}/{props.array.length}
       </span>
       <span className="learned-words-count">
-        Learned {CountOfLearnedWords} words
+        Learned {countOfLearnedWords} words
       </span>
     </main>
   );

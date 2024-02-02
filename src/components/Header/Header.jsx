@@ -16,10 +16,10 @@ function Header() {
         <Link className="header-hrefs active" to="/">
           My dictionary
         </Link>
-        <Link className="header-hrefs " to="/">
+        <Link className="header-hrefs " to="*">
           About
         </Link>
-        <Link className="header-hrefs" to="/">
+        <Link className="header-hrefs" to="*">
           Help
         </Link>
       </nav>
