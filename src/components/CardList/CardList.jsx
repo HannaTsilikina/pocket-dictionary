@@ -1,4 +1,3 @@
-/* eslint-disable no-lone-blocks */
 import Card from "../Card/Card";
 import "../../assets/styles/styleAppMain.scss";
 import "../Card/CardStyle.scss";

@@ -3,11 +3,7 @@ import "./LearnCard.scss";
 
 let LearnCard = forwardRef((props, ref) => {
   return (
-    <div
-      key={props.card.id}
-      className="learncard-container"
-      learned={props.learned}
-    >
+    <div key={props.card.id} className="learncard-container">
       <h3 className="main">{props.card.english}</h3>
       <span>{props.card.transcription}</span>
       {props.checked ? (
