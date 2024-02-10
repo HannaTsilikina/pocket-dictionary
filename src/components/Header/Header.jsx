@@ -1,6 +1,7 @@
 import "./HeaderStyle.scss";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
+import AuthDetails from "components/auth/AuthDetails";
 
 function Header() {
   return (
@@ -10,23 +11,29 @@ function Header() {
         <span className="text-logo">PocketEnglish</span>
       </a>
       <nav>
-        <Link className="header-hrefs" to="/game">
+        <NavLink className="header-hrefs" to="/game">
           Start to learn
-        </Link>
-        <Link className="header-hrefs active" to="/">
+        </NavLink>
+        <NavLink className="header-hrefs" to="/">
           My dictionary
-        </Link>
-        <Link className="header-hrefs " to="*">
+        </NavLink>
+        <NavLink className="header-hrefs " to="*">
           About
-        </Link>
-        <Link className="header-hrefs" to="*">
+        </NavLink>
+        <NavLink className="header-hrefs" to="*">
           Help
-        </Link>
+        </NavLink>
+        <div className="log">
+          <AuthDetails />
+          <NavLink to="/signup">
+            <button className="button-secondary"> Sign up</button>
+          </NavLink>
+          <NavLink to="/signin">
+            <button className="button-main"> Sign in</button>
+          </NavLink>
+        </div>
       </nav>
-      <div className="log">
-        <button className="button-main"> Sign in</button>
-        <button className="button-secondary"> Sign up</button>
-      </div>
+
       <Outlet />
     </header>
   );

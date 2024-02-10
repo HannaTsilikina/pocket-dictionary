@@ -7,6 +7,8 @@ import React from "react";
 import TrainMode from "./components/TrainMode/TrainMode";
 import listOfWords from "./store/store";
 import NotFound from "./components/NotFound/NotFound";
+import SignUp from "components/auth/SignUp";
+import SignIn from "components/auth/SignIn";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             element={<TrainMode array={listOfWords} number={0} />}
           />
           <Route path="*" element={<NotFound />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
         </Routes>
         <Footer />
       </div>

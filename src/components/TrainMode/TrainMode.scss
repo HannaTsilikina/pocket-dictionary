@@ -1,11 +1,12 @@
-@import "../../assets/styles/colors.scss";
-@import "../../assets/styles/mixins.scss";
-@import "../../assets/styles/global.scss";
+@import "assets/styles/colors.scss";
+@import "assets/styles/mixins.scss";
+@import "assets/styles/global.scss";
 
 .trainmode-main {
   @include textCenterCol;
-  margin: 5% 0%;
-  gap: 5vh;
+
+  gap: 3vh;
+  margin: 5vh;
 }
 .train-arr {
   max-width: 30px;
@@ -21,10 +22,10 @@
 }
 .react-card-flip {
   width: 20vw;
-  margin: 20px 0px;
+  margin: 5px 0px;
 }
 .learned-words-count {
-  margin-top: 20px;
+  margin-top: 5px;
   @include mainTextBold;
   font-size: 18px;
 }

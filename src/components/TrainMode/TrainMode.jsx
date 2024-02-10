@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import "./TrainMode.scss";
 import LearnCard from "../LearnCard/LearnCard";
-import "../../assets/images/right-arrow.png";
-import listOfWords from "../../store/store";
-import arrowRight from "../../assets/images/right-arrow.png";
-import arrowLeft from "../../assets/images/left-arrow.png";
+import listOfWords from "store/store";
+import arrowRight from "assets/images/right-arrow.png";
+import arrowLeft from "assets/images/left-arrow.png";
 
 export default function TrainMode(props) {
   const [isFlipped, setFlipped] = useState(false);

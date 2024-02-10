@@ -1,13 +1,14 @@
-@import "../../assets/styles/styleAppMain.scss";
-@import "../../assets/styles/colors.scss";
-@import "../../assets/styles/mixins.scss";
-@import "../../assets/styles/global.scss";
+@import "assets/styles/styleAppMain.scss";
+@import "assets/styles/colors.scss";
+@import "assets/styles/mixins.scss";
+@import "assets/styles/global.scss";
 
 .notfound-container {
   @include textCenterCol;
   gap: 5vh;
   width: 70vw;
   margin: 4em 1em;
+  flex: 1 1 auto;
 
   h1 {
     color: $mainColor;
@@ -19,7 +20,7 @@
   max-width: 90vw;
 }
 .image-notfound {
-  width: 30vw;
+  width: 20vw;
 }
 .span-notfound {
   color: $blackColor;

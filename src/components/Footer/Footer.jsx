@@ -1,5 +1,5 @@
 import "./FooterStyle.scss";
-import logo from "../../assets/images/logo.png";
+import logo from "assets/images/logo.png";
 function Footer() {
   return (
     <footer className="footer-container">

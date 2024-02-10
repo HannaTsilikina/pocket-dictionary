@@ -8,6 +8,7 @@
 .App {
   @include textCenterCol;
   max-width: 100%;
+  min-height: 100vh;
 }
 
 .cardsList-container {
