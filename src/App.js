@@ -1,14 +1,14 @@
+import SignIn from "components/auth/SignIn/SignIn";
+import SignUp from "components/auth/SugnUp/SignUp";
+import { Route, Routes } from "react-router-dom";
 import "./assets/styles/styleAppMain.scss";
-import { Routes, Route } from "react-router-dom";
 import CardList from "./components/CardList/CardList";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import React from "react";
+import NotFound from "./components/NotFound/NotFound";
 import TrainMode from "./components/TrainMode/TrainMode";
 import listOfWords from "./store/store";
-import NotFound from "./components/NotFound/NotFound";
-import SignUp from "components/auth/SignUp";
-import SignIn from "components/auth/SignIn";
+import PrivatyPolicy from "components/auth/PrivatyPolicy/PrivatyPolicy";
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/privatypolicy" element={<PrivatyPolicy />} />
         </Routes>
         <Footer />
       </div>

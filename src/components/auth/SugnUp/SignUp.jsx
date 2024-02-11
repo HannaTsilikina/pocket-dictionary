@@ -1,11 +1,15 @@
-import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { auth } from "../../../firebase";
+import "./SignUp.scss";
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [copyPassword, setcopyPassword] = useState("");
   const [error, setError] = useState("");
+  const [checkedInput, setCheckedInput] = useState(false);
 
   function register(event) {
     event.preventDefault();
@@ -24,31 +28,57 @@ const SignUp = () => {
       .catch((err) => console.log(err));
   }
   return (
-    <div>
-      <form onSubmit={register}>
-        <h2>Create an account</h2>
+    <main className="main-signup">
+      <h2>Create an account</h2>
+      <form className="form-register" onSubmit={register}>
         <input
           value={email}
-          placeholder="Email"
+          className="input-register"
+          placeholder="Enter your email"
           onChange={(e) => setEmail(e.target.value)}
           type="email"
         />
         <input
           value={password}
-          placeholder="Password"
+          className="input-register"
+          placeholder="Enter your password"
           onChange={(e) => setPassword(e.target.value)}
           type="password"
         />
         <input
           value={copyPassword}
-          placeholder="Password"
+          className="input-register"
+          placeholder="Repeat your password"
           onChange={(e) => setcopyPassword(e.target.value)}
           type="password"
         />
-        <button>Create</button>
+        <div>
+          <input
+            type="checkbox"
+            checked={checkedInput}
+            id="input-privacy"
+            onChange={() => {
+              setCheckedInput(!checkedInput);
+            }}
+          />
+          <label htmlFor="input-privacy">
+            {" "}
+            I agree with{" "}
+            <Link to="/privatypolicy">
+              <a className="href-underline">Privacy Policy</a>
+            </Link>
+          </label>
+        </div>
+
+        <button
+          className="button-main"
+          disabled={checkedInput ? null : "disabled"}
+        >
+          Create
+        </button>
         {error ? <p>{error}</p> : null}
       </form>
-    </div>
+    </main>
   );
 };
 export default SignUp;

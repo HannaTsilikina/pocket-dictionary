@@ -1,7 +1,7 @@
-import "./HeaderStyle.scss";
-import { Outlet, NavLink } from "react-router-dom";
+import AuthDetails from "components/auth/AuthDetails/AuthDetails";
+import { NavLink, Outlet } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
-import AuthDetails from "components/auth/AuthDetails";
+import "./HeaderStyle.scss";
 
 function Header() {
   return (
@@ -23,15 +23,7 @@ function Header() {
         <NavLink className="header-hrefs" to="*">
           Help
         </NavLink>
-        <div className="log">
-          <AuthDetails />
-          <NavLink to="/signup">
-            <button className="button-secondary"> Sign up</button>
-          </NavLink>
-          <NavLink to="/signin">
-            <button className="button-main"> Sign in</button>
-          </NavLink>
-        </div>
+        <AuthDetails />
       </nav>
 
       <Outlet />

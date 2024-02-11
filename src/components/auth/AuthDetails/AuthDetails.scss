@@ -1,0 +1,25 @@
+@import "assets/styles/colors.scss";
+@import "assets/styles/mixins.scss";
+@import "assets/styles/global.scss";
+
+.auth-check {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: flex-end;
+}
+.button-logOut {
+  border-radius: 5px;
+  @include mainTextRegular;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: $secondColor;
+  color: $greycolor;
+  cursor: pointer;
+}
+.authdetails-text {
+  @include mainTextRegular;
+}

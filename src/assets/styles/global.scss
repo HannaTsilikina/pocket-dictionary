@@ -12,6 +12,10 @@ a:active {
   color: $blackColor;
   background-color: $secondColor;
 }
+.button-main:disabled {
+  color: $secondColor;
+  background-color: $greycolor;
+}
 .button-main:active {
   text-decoration: underline;
   background-color: $secondColor;

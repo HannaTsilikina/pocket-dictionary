@@ -6,7 +6,7 @@
   @include textCenterRow;
   justify-content: space-between;
   width: 100%;
-  gap: 10px;
+  gap: 5em;
   padding: 30px 20px;
   border-bottom: 1px solid;
   box-sizing: border-box;
@@ -25,7 +25,9 @@
 
 nav {
   @include textCenterRow;
-  gap: 7vw;
+  justify-content: space-between;
+  gap: 1em;
+  width: 100%;
 }
 .button-main {
   @include button-main;

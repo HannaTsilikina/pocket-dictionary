@@ -1,6 +1,8 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../../firebase";
+import { NavLink } from "react-router-dom";
+import { auth } from "../../../firebase";
 import { useEffect, useState } from "react";
+import "./AuthDetails.scss";
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
@@ -23,15 +25,25 @@ const AuthDetails = () => {
   return (
     <div>
       {authUser ? (
-        <div>
+        <div className="auth-check">
           {" "}
-          <p> {`Sighned as ${authUser.email}`}</p>
-          <button onClick={userSignedOut}>Signed out</button>
+          <p className="authdetails-text"> {`Signed as ${authUser.email}`}</p>
+          <button className="button-logOut" onClick={userSignedOut}>
+            Signed out
+          </button>
         </div>
       ) : (
-        <p>Signed out</p>
+        <div className="log">
+          <NavLink to="/signup">
+            <button className="button-secondary"> Sign up</button>
+          </NavLink>
+          <NavLink to="/signin">
+            <button className="button-main"> Sign in</button>
+          </NavLink>
+        </div>
       )}
     </div>
   );
 };
+
 export default AuthDetails;
