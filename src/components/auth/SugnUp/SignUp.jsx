@@ -14,7 +14,7 @@ const SignUp = () => {
   function register(event) {
     event.preventDefault();
     if (password !== copyPassword) {
-      setError("passwords didn't match");
+      setError("Sorry, your password didn't match.   Please, try again");
       return;
     }
     createUserWithEmailAndPassword(auth, email, password)

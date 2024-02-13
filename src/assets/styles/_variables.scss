@@ -1,0 +1,40 @@
+$textFont: Lato;
+$fontWeightBlack: 900;
+$fontWeightBold: 700;
+$fontWeightRegular: 400;
+
+$mainTextRegular: var
+  (
+    font-family: $textFont,
+  )
+  (
+    font-weight: $fontWeightRegular,
+  );
+
+$mainTextBold: var
+  (
+    font-family: $textFont,
+  ) / var
+  (
+    font-weight: $fontWeightBlack,
+  );
+$mainTextBlack: var
+  (
+    font-family: $textFont,
+  ) / var
+  (
+    font-weight: $fontWeightBold,
+  );
+
+// @mixin mainTextRegular {
+//   font-family: $textFont;
+//   font-weight: $fontWeightRegular;
+// // }
+// // @mixin mainTextBold {
+// //   font-family: $textFont;
+// //   font-weight: $fontWeightBlack;
+// }
+// @mixin mainTextBlack {
+//   font-family: $textFont;
+//   font-weight: $fontWeightBold;
+// }

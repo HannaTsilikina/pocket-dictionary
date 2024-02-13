@@ -1,6 +1,7 @@
 @import "assets/styles/colors.scss";
 @import "assets/styles/mixins.scss";
 @import "assets/styles/global.scss";
+@import "assets/styles/variables.scss";
 
 .trainmode-main {
   @include textCenterCol;
@@ -26,7 +27,7 @@
 }
 .learned-words-count {
   margin-top: 5px;
-  @include mainTextBold;
+  font: $mainTextBold;
   font-size: 18px;
 }
 

@@ -1,9 +1,10 @@
 @import "assets/styles/colors.scss";
 @import "assets/styles/mixins.scss";
 @import "assets/styles/global.scss";
+@import "assets/styles/variables.scss";
 
 .card-container {
-  @include mainTextRegular;
+  font: $mainTextRegular;
   @include textGrid;
   justify-items: center;
   padding: 5px 20px;
@@ -15,7 +16,7 @@
   align-items: center;
 }
 .card-main-container {
-  @include mainTextBold;
+  font: $mainTextBold;
   @include textGrid;
   justify-content: center;
   padding: 15px;

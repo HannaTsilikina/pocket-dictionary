@@ -1,8 +1,8 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { NavLink } from "react-router-dom";
 import { auth } from "../../../firebase";
 import { useEffect, useState } from "react";
 import "./AuthDetails.scss";
+import { NavLink } from "react-router-dom";
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
@@ -33,14 +33,16 @@ const AuthDetails = () => {
           </button>
         </div>
       ) : (
-        <div className="log">
-          <NavLink to="/signup">
-            <button className="button-secondary"> Sign up</button>
-          </NavLink>
-          <NavLink to="/signin">
-            <button className="button-main"> Sign in</button>
-          </NavLink>
-        </div>
+        <>
+          <div className="log">
+            <NavLink to="/signin">
+              <button className="button-main">Sign in</button>
+            </NavLink>
+            <NavLink to="/signup">
+              <button className="button-secondary">Sign up</button>
+            </NavLink>
+          </div>
+        </>
       )}
     </div>
   );

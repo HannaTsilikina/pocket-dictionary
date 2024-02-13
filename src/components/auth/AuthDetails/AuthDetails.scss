@@ -1,6 +1,7 @@
 @import "assets/styles/colors.scss";
 @import "assets/styles/mixins.scss";
 @import "assets/styles/global.scss";
+@import "assets/styles/variables.scss";
 
 .auth-check {
   display: flex;
@@ -11,7 +12,7 @@
 }
 .button-logOut {
   border-radius: 5px;
-  @include mainTextRegular;
+  font: $mainTextRegular;
   font-size: 14px;
   padding: 10px 20px;
   border-radius: 10px;
@@ -21,5 +22,5 @@
   cursor: pointer;
 }
 .authdetails-text {
-  @include mainTextRegular;
+  font: $mainTextRegular;
 }

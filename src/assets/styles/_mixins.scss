@@ -1,17 +1,3 @@
-@mixin mainTextRegular {
-  font-family: Lato;
-  font-weight: 400;
-  font-style: normal;
-}
-@mixin mainTextBold {
-  font-family: Lato;
-  font-weight: 700;
-}
-@mixin mainTextBlack {
-  font-family: Lato;
-  font-weight: 900;
-}
-
 @mixin textCenterRow {
   display: flex;
   justify-content: center;
@@ -31,7 +17,7 @@
   justify-content: center;
 }
 @mixin button-main {
-  @include mainTextBold;
+  font: $mainTextBold;
   font-size: 14px;
   padding: 10px 20px;
   border-radius: 10px;
@@ -42,7 +28,7 @@
 }
 
 @mixin button-secondary {
-  @include mainTextBold;
+  font: $mainTextBold;
   font-size: 14px;
   padding: 10px 20px;
   border-radius: 10px;
@@ -52,7 +38,7 @@
   cursor: pointer;
 }
 @mixin button-delete {
-  @include mainTextBold;
+  font: $mainTextBold;
   font-size: 12px;
   padding: 10px 20px;
   border-radius: 10px;

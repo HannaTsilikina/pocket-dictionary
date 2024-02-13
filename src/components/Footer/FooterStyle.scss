@@ -1,6 +1,8 @@
 @import "assets/styles/colors.scss";
 @import "assets/styles/mixins.scss";
 @import "assets/styles/global.scss";
+@import "assets/styles/variables.scss";
+
 .footer-container {
   @include textCenterRow;
   justify-content: space-between;
@@ -26,7 +28,7 @@
 }
 
 .text-logo {
-  @include mainTextBlack;
+  font: $mainTextBlack;
   font-size: 24px;
   color: $mainColor;
 }
@@ -46,7 +48,7 @@ a {
   padding: 10px 50px;
   gap: 50px;
   a {
-    @include mainTextBlack;
+    font: $mainTextBlack;
     font-size: 18px;
     text-decoration: none;
     color: $blackColor;

@@ -14,7 +14,7 @@ function Header() {
         <NavLink className="header-hrefs" to="/game">
           Start to learn
         </NavLink>
-        <NavLink className="header-hrefs" to="/">
+        <NavLink className="header-hrefs" to="/dictionary">
           My dictionary
         </NavLink>
         <NavLink className="header-hrefs " to="*">

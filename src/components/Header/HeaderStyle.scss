@@ -1,6 +1,7 @@
 @import "assets/styles/colors.scss";
 @import "assets/styles/mixins.scss";
 @import "assets/styles/global.scss";
+@import "assets/styles/variables.scss";
 
 .header-container {
   @include textCenterRow;
@@ -17,7 +18,7 @@
   background-color: white;
 }
 .header-hrefs {
-  @include mainTextBlack;
+  font: $mainTextBlack;
   font-size: 18px;
   text-decoration: none;
   color: $blackColor;
@@ -50,7 +51,7 @@ nav {
 }
 
 .text-logo {
-  @include mainTextBlack;
+  font: $mainTextBlack;
   font-size: 24px;
   color: $mainColor;
 }
