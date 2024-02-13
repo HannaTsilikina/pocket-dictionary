@@ -16,6 +16,7 @@
 }
 
 .translation-word {
-  font: $mainTextBold;
+  font-family: $fontFamilyMain;
+  font-weight: $fontWeightBold;
   color: $mainColor;
 }

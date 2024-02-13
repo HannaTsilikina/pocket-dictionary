@@ -12,7 +12,8 @@
 }
 .button-logOut {
   border-radius: 5px;
-  font: $mainTextRegular;
+  font-family: $fontFamilyMain;
+  font-weight: $fontWeightRegular;
   font-size: 14px;
   padding: 10px 20px;
   border-radius: 10px;
@@ -22,5 +23,6 @@
   cursor: pointer;
 }
 .authdetails-text {
-  font: $mainTextRegular;
+  font-family: $fontFamilyMain;
+  font-weight: $fontWeightRegular;
 }

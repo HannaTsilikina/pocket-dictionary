@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../../firebase";
 import "./SignUp.scss";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ const SignUp = () => {
   const [copyPassword, setcopyPassword] = useState("");
   const [error, setError] = useState("");
   const [checkedInput, setCheckedInput] = useState(false);
+  const navigate = useNavigate();
 
   function register(event) {
     event.preventDefault();
@@ -24,6 +26,7 @@ const SignUp = () => {
         setEmail("");
         setcopyPassword("");
         setPassword("");
+        navigate("/dictionary");
       })
       .catch((err) => console.log(err));
   }

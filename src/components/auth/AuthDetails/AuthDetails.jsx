@@ -3,9 +3,11 @@ import { auth } from "../../../firebase";
 import { useEffect, useState } from "react";
 import "./AuthDetails.scss";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) setAuthUser(user);
@@ -21,6 +23,7 @@ const AuthDetails = () => {
     signOut(auth)
       .then(() => console.log("success"))
       .catch((err) => console.log(err));
+    navigate("/");
   }
   return (
     <div>

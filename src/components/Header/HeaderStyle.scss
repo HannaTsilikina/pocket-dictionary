@@ -18,7 +18,8 @@
   background-color: white;
 }
 .header-hrefs {
-  font: $mainTextBlack;
+  font-family: $fontFamilyMain;
+  font-weight: $fontWeightBlack;
   font-size: 18px;
   text-decoration: none;
   color: $blackColor;
@@ -51,7 +52,8 @@ nav {
 }
 
 .text-logo {
-  font: $mainTextBlack;
+  font-family: $fontFamilyMain;
+  font-weight: $fontWeightBlack;
   font-size: 24px;
   color: $mainColor;
 }

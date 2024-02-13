@@ -4,7 +4,8 @@
 @import "assets/styles/variables.scss";
 
 .card-container {
-  font: $mainTextRegular;
+  font-family: $fontFamilyMain;
+  font-weight: $fontWeightRegular;
   @include textGrid;
   justify-items: center;
   padding: 5px 20px;
@@ -16,7 +17,8 @@
   align-items: center;
 }
 .card-main-container {
-  font: $mainTextBold;
+  font-family: $fontFamilyMain;
+  font-weight: $fontWeightBold;
   @include textGrid;
   justify-content: center;
   padding: 15px;

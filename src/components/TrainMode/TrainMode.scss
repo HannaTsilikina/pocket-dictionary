@@ -27,7 +27,8 @@
 }
 .learned-words-count {
   margin-top: 5px;
-  font: $mainTextBold;
+  font-family: $fontFamilyMain;
+  font-weight: $fontWeightBold;
   font-size: 18px;
 }
 

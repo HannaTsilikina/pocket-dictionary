@@ -25,7 +25,8 @@
 }
 .span-notfound {
   color: $blackColor;
-  @include mainTextBold;
+  font-family: $fontFamilyMain;
+  font-weight: $fontWeightBold;
   font-size: 32px;
   font-style: italic;
   max-width: 30%;
