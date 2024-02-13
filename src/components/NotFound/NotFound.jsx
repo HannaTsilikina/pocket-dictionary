@@ -13,7 +13,7 @@ export default function NotFound() {
           alt="imageNotFound"
         ></img>
       </div>
-      <Link className="notfound" to="/">
+      <Link className="notfound" to="/dictionary">
         <button className="button-main">Back to home page</button>
       </Link>
     </main>
