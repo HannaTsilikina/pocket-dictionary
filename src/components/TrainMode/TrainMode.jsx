@@ -49,7 +49,7 @@ export default function TrainMode(props) {
         The training is over. <br /> Your result : {countOfLearnedWords} learned
         words
       </h2>
-      <a href="/">
+      <a href="/dictionary">
         <button className="button-save">{"Back to dictionary"}</button>
       </a>
     </main>

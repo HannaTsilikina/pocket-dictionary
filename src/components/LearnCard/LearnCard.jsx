@@ -15,6 +15,7 @@ let LearnCard = forwardRef((props, ref) => {
           {"check "}
         </button>
       )}
+      {/* {props.learned ? } */}
     </div>
   );
 });
