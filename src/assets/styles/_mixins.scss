@@ -17,9 +17,7 @@
   justify-content: center;
 }
 @mixin button-main {
-  font-family: $fontFamilyMain;
-  font-weight: $fontWeightBold;
-  font-size: 14px;
+  font: $fontMainBoldXS;
   padding: 10px 20px;
   border-radius: 10px;
   border: none;
@@ -29,9 +27,7 @@
 }
 
 @mixin button-secondary {
-  font-family: $fontFamilyMain;
-  font-weight: $fontWeightBold;
-  font-size: 14px;
+  font: $fontMainBoldXS;
   padding: 10px 20px;
   border-radius: 10px;
   border: 1px solid $mainColor;
@@ -40,12 +36,11 @@
   cursor: pointer;
 }
 @mixin button-delete {
-  font-family: $fontFamilyMain;
-  font-weight: $fontWeightBold;
-  font-size: 12px;
+  font: $fontMainBoldXS;
   padding: 10px 20px;
   border-radius: 10px;
   border: 1px solid $secondColor;
   background-color: $secondColor;
   color: $blackColor;
+  cursor: pointer;
 }

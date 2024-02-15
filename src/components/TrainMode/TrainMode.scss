@@ -5,7 +5,6 @@
 
 .trainmode-main {
   @include textCenterCol;
-
   gap: 3vh;
   margin: 5vh;
 }
@@ -27,9 +26,7 @@
 }
 .learned-words-count {
   margin-top: 5px;
-  font-family: $fontFamilyMain;
-  font-weight: $fontWeightBold;
-  font-size: 18px;
+  font: $fontMainBoldM;
 }
 
 .text-finish {

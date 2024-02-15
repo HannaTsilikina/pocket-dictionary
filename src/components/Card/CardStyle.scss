@@ -1,29 +1,26 @@
 @import "assets/styles/colors.scss";
 @import "assets/styles/mixins.scss";
-@import "assets/styles/global.scss";
+// @import "assets/styles/global.scss";
 @import "assets/styles/variables.scss";
 
 .card-container {
-  font-family: $fontFamilyMain;
-  font-weight: $fontWeightRegular;
+  font: $fontMainRegularS;
   @include textGrid;
   justify-items: center;
   padding: 5px 20px;
   border-bottom: 1px solid rgb(215, 227, 248);
-  font-size: 14px;
   width: 100%;
   box-sizing: border-box;
   text-align: center;
   align-items: center;
 }
 .card-main-container {
-  font-family: $fontFamilyMain;
-  font-weight: $fontWeightBold;
+  font: $fontMainRegularM;
+
   @include textGrid;
   justify-content: center;
   padding: 15px;
   border-bottom: 1px solid rgb(215, 227, 248);
-  font-size: 18px;
   width: 100%;
   box-sizing: border-box;
   background-color: $secondColor;

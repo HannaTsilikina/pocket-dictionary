@@ -28,9 +28,7 @@
 }
 
 .text-logo {
-  font-family: $fontFamilyMain;
-  font-weight: $fontWeightBlack;
-  font-size: 24px;
+  font: $fontMainBlackL;
   color: $mainColor;
 }
 
@@ -49,9 +47,7 @@ a {
   padding: 10px 50px;
   gap: 50px;
   a {
-    font-family: $fontFamilyMain;
-    font-weight: $fontWeightBlack;
-    font-size: 18px;
+    font: $fontMainBlackM;
     text-decoration: none;
     color: $blackColor;
     opacity: 70%;

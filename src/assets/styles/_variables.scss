@@ -2,39 +2,28 @@ $fontFamilyMain: Lato;
 $fontWeightBlack: 900;
 $fontWeightBold: 700;
 $fontWeightRegular: 400;
+$fontSizeXS: 12px;
+$fontSizeS: 14px;
+$fontSizeM: 18px;
+$fontSizeL: 24px;
+$fontSizeXL: 2em;
 
-// $textFont, $fontWeightRegular: var
-//   (
-//     font-family: Lato,
-//   )
-//   (
-//     font-weight: 400,
-//   );
+$fontMainRegularXS: normal $fontWeightRegular $fontSizeXS "Lato";
+$fontMainBoldXS: normal $fontWeightBold $fontSizeXS "Lato";
+$fontMainBlackXS: normal $fontWeightBlack $fontSizeXS "Lato";
 
-// $mainTextBold: var
-//   (
-//     font-family: Lato,
-//   ) / var
-//   (
-//     font-weight: 900,
-//   );
-// $mainTextBlack: var
-//   (
-//     font-family: Lato,
-//   ) / var
-//   (
-//     font-weight: 700,
-//   );
+$fontMainRegularS: normal $fontWeightRegular $fontSizeS "Lato";
+$fontMainBoldS: normal $fontWeightBold $fontSizeS "Lato";
+$fontMainBlackS: normal $fontWeightBlack $fontSizeS "Lato";
 
-// @mixin mainTextRegular {
-//   font-family: $textFont;
-//   font-weight: $fontWeightRegular;
-// // }
-// // @mixin mainTextBold {
-// //   font-family: $textFont;
-// //   font-weight: $fontWeightBlack;
-// }
-// @mixin mainTextBlack {
-//   font-family: $textFont;
-//   font-weight: $fontWeightBold;
-// }
+$fontMainRegularM: normal $fontWeightRegular $fontSizeM "Lato";
+$fontMainBoldM: normal $fontWeightBold $fontSizeM "Lato";
+$fontMainBlackM: normal $fontWeightBlack $fontSizeM "Lato";
+
+$fontMainRegularL: normal $fontWeightRegular $fontSizeL "Lato";
+$fontMainBoldL: normal $fontWeightBold $fontSizeL "Lato";
+$fontMainBlackL: normal $fontWeightBlack $fontSizeL "Lato";
+
+$fontMainRegularXL: normal $fontWeightRegular $fontSizeXL "Lato";
+$fontMainBoldXL: normal $fontWeightBold $fontSizeXL "Lato";
+$fontMainBlackXL: normal $fontWeightBlack $fontSizeXL "Lato";
