@@ -38,3 +38,7 @@
 .button-delete:active {
   font-weight: $fontWeightBold;
 }
+:disabled {
+  background-color: $secondColor;
+  color: $greycolor;
+}

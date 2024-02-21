@@ -8,11 +8,20 @@
   @include textGrid;
   justify-items: center;
   padding: 5px 20px;
-  border-bottom: 1px solid rgb(215, 227, 248);
   width: 100%;
   box-sizing: border-box;
   text-align: center;
   align-items: center;
+}
+.card-main {
+  font: $fontMainRegularS;
+  color: $errorColor;
+  justify-items: center;
+  padding: 5px 20px;
+  border-bottom: 1px solid rgb(215, 227, 248);
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: flex-start;
 }
 .card-main-container {
   font: $fontMainRegularM;
@@ -34,4 +43,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.added-word-error {
+  width: 60%;
+  border-radius: 10px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: $errorColor;
+}
+.added-word-error {
+  border: 3px solid $errorColor;
 }
