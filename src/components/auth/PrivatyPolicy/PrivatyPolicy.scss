@@ -1,0 +1,22 @@
+@import "assets/styles/colors.scss";
+@import "assets/styles/mixins.scss";
+@import "assets/styles/variables.scss";
+
+main {
+  @include textCenterCol;
+  padding: 5% 2%;
+}
+.privaty-container {
+  @include textCenterCol;
+  align-items: flex-start;
+  padding: 5px 20px;
+  //   width: 100%;
+  gap: 20px;
+  margin: 5% 2%;
+  font: $fontMainRegularM;
+  a {
+    text-decoration: underline;
+  }
+}
+p {
+}

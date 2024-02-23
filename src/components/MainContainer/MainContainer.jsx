@@ -3,7 +3,7 @@ import TrainMode from "components/TrainMode/TrainMode";
 import listOfWords from "store/store";
 import PrivatyPolicy from "components/auth/PrivatyPolicy/PrivatyPolicy";
 import SignIn from "components/auth/SignIn/SignIn";
-import SignUp from "components/auth/SugnUp/SignUp";
+import SignUp from "components/auth/SignUp/SignUp";
 import { Route, Routes } from "react-router-dom";
 import CardList from "components/CardList/CardList";
 import Authorization from "components/auth/Authorization/Authorization";
