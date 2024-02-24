@@ -27,42 +27,30 @@ function Card(props) {
   const [topic, setTopic] = useState(props.topic);
   const [name, setName] = useState(props.name);
   const [errorMessage, setErrorMessage] = useState("");
-  let incorrectData = `${errorValues.name}, ${errorValues.transcription} ${errorValues.translation} ${errorValues.topic} `;
+
   useEffect(() => {
-    if (name.trim() === "") {
+    if (Object.values(errorValues).includes(true)) {
+      setErrorMessage(`Please enter the correct`);
+    } else {
+      setErrorMessage("");
+    }
+  }, [errorValues]);
+
+  const handleInputChange = (e, inputName, setInputState) => {
+    if (e.target.value.trim() === "" && errorValues[inputName] === false) {
       setErrorValue({
-        errorValues,
+        ...errorValues,
+        [inputName]: true,
       });
-      setErrorMessage(`Please enter the correct ${incorrectData}`);
+    } else {
+      setErrorValue({
+        ...errorValues,
+        [inputName]: false,
+      });
     }
-    if (topic.trim() === "") {
-      // setErrorValue({
-      //   errorValues,
-      // });
-      setErrorMessage(`Please enter the correct ${incorrectData}`);
-    }
-    if (translation.trim() === "") {
-      // setErrorValue({
-      //   errorValues,
-      // });
-      setErrorMessage(`Please enter the correct ${incorrectData}`);
-    }
-    if (transcription.trim() === "") {
-      // setErrorValue({
-      //   errorValues,
-      // });
-      setErrorMessage(`Please enter the correct ${incorrectData}`);
-    }
-    // else {
-    //   setErrorValue({
-    //     name: false,
-    //     translation: false,
-    //     transcription: false,
-    //     topic: false,
-    //   });
-    // }
-  }, [name, topic, translation, transcription]);
-  useEffect(() => console.log(errorValues));
+    setInputState(e.target.value);
+  };
+
   if (!props.new && props.main)
     return (
       <div className="card-main-container" key={props.id}>
@@ -82,20 +70,7 @@ function Card(props) {
               errorValues.name === true ? "added-word-error" : "added-word"
             }
             value={name}
-            onChange={(e) => {
-              if (name.trim() === "" && errorValues.name === false) {
-                setErrorValue({
-                  name: true,
-                  translation: false,
-                  transcription: false,
-                  topic: false,
-                });
-              }
-              setName(e.target.value);
-              setErrorValue(errorValues);
-
-              setErrorMessage(`Please enter the correct ${incorrectData}`);
-            }}
+            onChange={(e) => handleInputChange(e, "name", setName)}
           ></input>
           <input
             className={
@@ -104,24 +79,9 @@ function Card(props) {
                 : "added-word"
             }
             value={transcription}
-            onChange={(e) => {
-              if (
-                transcription.trim() === "" &&
-                errorValues.transcription === false
-              ) {
-                setErrorValue({
-                  name: false,
-                  translation: false,
-                  transcription: true,
-                  topic: false,
-                });
-                console.log(errorValues);
-              }
-              setTranscription(e.target.value);
-              setErrorValue(errorValues);
-
-              setErrorMessage(`Please enter the correct ${incorrectData}`);
-            }}
+            onChange={(e) =>
+              handleInputChange(e, "transcription", setTranscription)
+            }
           ></input>
           <input
             className={
@@ -130,43 +90,16 @@ function Card(props) {
                 : "added-word"
             }
             value={translation}
-            onChange={(e) => {
-              if (
-                translation.trim() === "" &&
-                errorValues.translation === false
-              ) {
-                setErrorValue({
-                  name: false,
-                  translation: true,
-                  transcription: false,
-                  topic: false,
-                });
-                console.log(errorValues);
-              }
-              setTranslation(e.target.value);
-
-              setErrorValue(errorValues);
-              setErrorMessage(`Please enter the correct ${incorrectData}`);
-            }}
+            onChange={(e) =>
+              handleInputChange(e, "translation", setTranslation)
+            }
           ></input>
           <input
             className={
               errorValues.topic === true ? "added-word-error" : "added-word"
             }
             value={topic}
-            onChange={(e) => {
-              if (topic.trim() === "" && errorValues.topic === false) {
-                setErrorValue({
-                  name: false,
-                  translation: false,
-                  transcription: false,
-                  topic: true,
-                });
-              }
-              setTopic(e.target.value);
-              setErrorValue(errorValues);
-              setErrorMessage(`Please enter the correct ${incorrectData}`);
-            }}
+            onChange={(e) => handleInputChange(e, "topic", setTopic)}
           ></input>
           <div className="buttons-container">
             <Button
