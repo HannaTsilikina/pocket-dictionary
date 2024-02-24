@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Button from "../AppUI/Buttons/Button";
 
-// проверка на транскрипцию, кириллицу и пароль!
-
 function Card(props) {
   const [errorValues, setErrorValue] = useState({
     inputName: false,
@@ -73,6 +71,55 @@ function Card(props) {
     setInputState({ ...inputs, [stringOfKey]: e.target.value });
   };
 
+  const handleInputTranscriptionCheck = (e, setInputState) => {
+    let value = e.target.value.trim();
+    if (value[0] !== "[" || value[value.length - 1] !== "]") {
+      setErrorValue({
+        ...errorValues,
+        ["inputTranscription"]: true,
+      });
+    } else {
+      setErrorValue({
+        ...errorValues,
+        ["inputTranscription"]: false,
+      });
+    }
+    setInputState({ ...inputs, ["inputTranscription"]: e.target.value });
+  };
+
+  const handleCheckCyrillicPattern = (e, nameOfInput, setInputState) => {
+    const cyrillicPattern = /^[А-ЯЁ]+$/i;
+    let result = cyrillicPattern.test(e.target.value.trim());
+    if (result) {
+      setErrorValue({
+        ...errorValues,
+        [nameOfInput]: false,
+      });
+    } else {
+      setErrorValue({
+        ...errorValues,
+        [nameOfInput]: true,
+      });
+    }
+    setInputState({ ...inputs, [nameOfInput]: e.target.value });
+  };
+  const handleCheckLatinPattern = (e, nameOfInput, setInputState) => {
+    const latinPattern = /^[A-Z]+$/i;
+    let result = latinPattern.test(e.target.value.trim());
+    if (result) {
+      setErrorValue({
+        ...errorValues,
+        [nameOfInput]: false,
+      });
+    } else {
+      setErrorValue({
+        ...errorValues,
+        [nameOfInput]: true,
+      });
+    }
+    setInputState({ ...inputs, [nameOfInput]: e.target.value });
+  };
+
   if (!props.new && props.main)
     return (
       <div className="card-main-container" key={props.id}>
@@ -92,7 +139,11 @@ function Card(props) {
               errorValues.inputName === true ? "added-word-error" : "added-word"
             }
             value={inputs.inputName}
-            onChange={(e) => handleInputChange(e, "inputName", setInputState)}
+            type="text"
+            onChange={(e) => {
+              handleInputChange(e, "inputName", setInputState);
+              handleCheckLatinPattern(e, "inputName", setInputState);
+            }}
           ></input>
           <input
             className={
@@ -101,10 +152,12 @@ function Card(props) {
                 : "added-word"
             }
             value={inputs.inputTranscription}
-            onChange={(e) =>
-              handleInputChange(e, "inputTranscription", setInputState)
-            }
-          ></input>
+            type="text"
+            onChange={(e) => {
+              handleInputChange(e, "inputTranscription", setInputState);
+              handleInputTranscriptionCheck(e, setInputState);
+            }}
+          />
           <input
             className={
               errorValues.inputTranslation === true
@@ -112,9 +165,11 @@ function Card(props) {
                 : "added-word"
             }
             value={inputs.inputTranslation}
-            onChange={(e) =>
-              handleInputChange(e, "inputTranslation", setInputState)
-            }
+            type="text"
+            onChange={(e) => {
+              handleInputChange(e, "inputTranslation", setInputState);
+              handleCheckCyrillicPattern(e, "inputTranslation", setInputState);
+            }}
           ></input>
           <input
             className={
@@ -123,7 +178,11 @@ function Card(props) {
                 : "added-word"
             }
             value={inputs.inputTopic}
-            onChange={(e) => handleInputChange(e, "inputTopic", setInputState)}
+            type="text"
+            onChange={(e) => {
+              handleInputChange(e, "inputTopic", setInputState);
+              handleCheckCyrillicPattern(e, "inputTopic", setInputState);
+            }}
           ></input>
           <div className="buttons-container">
             <Button
