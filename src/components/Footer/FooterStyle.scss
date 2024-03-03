@@ -48,8 +48,10 @@ a {
   gap: 50px;
   a {
     font: $fontMainBlackM;
-    text-decoration: none;
     color: $blackColor;
     opacity: 70%;
   }
+}
+.active {
+  text-decoration: underline;
 }

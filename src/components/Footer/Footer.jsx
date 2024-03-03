@@ -1,5 +1,6 @@
 import "./FooterStyle.scss";
 import logo from "assets/images/logo.png";
+import { NavLink } from "react-router-dom";
 function Footer() {
   return (
     <footer className="footer-container">
@@ -12,15 +13,15 @@ function Footer() {
         <span className="text-logo">PocketEnglish</span>
       </a>
       <div className="footer-links">
-        <a className="footer-hrefs" href="">
+        <NavLink className="footer-hrefs " to="*">
           Our partners
-        </a>
-        <a className="footer-hrefs" href="">
+        </NavLink>
+        <NavLink className="footer-hrefs " to="*">
           Support
-        </a>
-        <a className="footer-hrefs" href="">
+        </NavLink>
+        <NavLink className="footer-hrefs " to="*">
           Useful links
-        </a>
+        </NavLink>
       </div>
     </footer>
   );

@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import Button from "../AppUI/Buttons/Button";
+import Input from "components/AppUI/Input/Input";
+import useValidationOfWords from "hooks/useValidationOfWords";
 
 function Card(props) {
-  const [errorValues, setErrorValue] = useState({
-    inputName: false,
-    inputTranscription: false,
-    inputTranslation: false,
-    inputTopic: false,
-  });
   const [edit, setEdit] = useState(false);
   const handleEdit = () => {
     setEdit(!edit);
@@ -28,7 +24,35 @@ function Card(props) {
     inputTranslation: props.translation,
     inputTopic: props.topic,
   });
+
+  const validateOfName = useValidationOfWords(/^[A-Z]+$/i, inputs.inputName);
+  const validateOfTranscription = useValidationOfWords(
+    false,
+    inputs.inputTranscription
+  );
+  const validateOfTranslation = useValidationOfWords(
+    /^[А-ЯЁ]+$/i,
+    inputs.inputTranslation
+  );
+  const validateOfTopic = useValidationOfWords(/^[А-ЯЁ]+$/i, inputs.inputTopic);
+
+  const [errorValues, setErrorValue] = useState({
+    inputName: false,
+    inputTranscription: false,
+    inputTranscriptionFormat: false,
+    inputTranslation: false,
+    inputTopic: false,
+  });
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    setErrorValue({
+      inputName: validateOfName.inputError,
+      inputTranscriptionFormat: validateOfTranscription.transcriptionError,
+      inputTranslation: validateOfTranslation.inputError,
+      inputTopic: validateOfTopic.inputError,
+    });
+  }, [inputs]);
 
   useEffect(() => {
     if (Object.values(errorValues).includes(true)) {
@@ -38,8 +62,10 @@ function Card(props) {
           if (Object.keys(errorValues)[i] === "inputName") {
             wrongInputs.push("english word");
           }
-          if (Object.keys(errorValues)[i] === "inputTranscription") {
-            wrongInputs.push("transcription");
+          if (Object.keys(errorValues)[i] === "inputTranscriptionFormat") {
+            wrongInputs.push(
+              `transcription: Transcription have to start with "[" and ends with "]"`
+            );
           }
           if (Object.keys(errorValues)[i] === "inputTranslation") {
             wrongInputs.push("translation");
@@ -49,8 +75,11 @@ function Card(props) {
           }
         }
       }
-
-      setErrorMessage(`Please enter the correct ${wrongInputs.join(",")} `);
+      if (wrongInputs.includes("transcriptionFormat")) {
+        setErrorMessage(`Please enter the correct ${wrongInputs.join(",")}"`);
+      } else {
+        setErrorMessage(`Please enter the correct ${wrongInputs.join(",")} `);
+      }
     } else {
       setErrorMessage("");
     }
@@ -71,55 +100,6 @@ function Card(props) {
     setInputState({ ...inputs, [stringOfKey]: e.target.value });
   };
 
-  const handleInputTranscriptionCheck = (e, setInputState) => {
-    let value = e.target.value.trim();
-    if (value[0] !== "[" || value[value.length - 1] !== "]") {
-      setErrorValue({
-        ...errorValues,
-        ["inputTranscription"]: true,
-      });
-    } else {
-      setErrorValue({
-        ...errorValues,
-        ["inputTranscription"]: false,
-      });
-    }
-    setInputState({ ...inputs, ["inputTranscription"]: e.target.value });
-  };
-
-  const handleCheckCyrillicPattern = (e, nameOfInput, setInputState) => {
-    const cyrillicPattern = /^[А-ЯЁ]+$/i;
-    let result = cyrillicPattern.test(e.target.value.trim());
-    if (result) {
-      setErrorValue({
-        ...errorValues,
-        [nameOfInput]: false,
-      });
-    } else {
-      setErrorValue({
-        ...errorValues,
-        [nameOfInput]: true,
-      });
-    }
-    setInputState({ ...inputs, [nameOfInput]: e.target.value });
-  };
-  const handleCheckLatinPattern = (e, nameOfInput, setInputState) => {
-    const latinPattern = /^[A-Z]+$/i;
-    let result = latinPattern.test(e.target.value.trim());
-    if (result) {
-      setErrorValue({
-        ...errorValues,
-        [nameOfInput]: false,
-      });
-    } else {
-      setErrorValue({
-        ...errorValues,
-        [nameOfInput]: true,
-      });
-    }
-    setInputState({ ...inputs, [nameOfInput]: e.target.value });
-  };
-
   if (!props.new && props.main)
     return (
       <div className="card-main-container" key={props.id}>
@@ -134,56 +114,38 @@ function Card(props) {
     return (
       <div className="card-main">
         <div className="card-container" key={props.id}>
-          <input
-            className={
-              errorValues.inputName === true ? "added-word-error" : "added-word"
-            }
+          <Input
+            error={errorValues.inputName}
             value={inputs.inputName}
-            type="text"
-            onChange={(e) => {
+            handleInputChange={(e) => {
               handleInputChange(e, "inputName", setInputState);
-              handleCheckLatinPattern(e, "inputName", setInputState);
-            }}
-          ></input>
-          <input
-            className={
-              errorValues.inputTranscription === true
-                ? "added-word-error"
-                : "added-word"
-            }
-            value={inputs.inputTranscription}
-            type="text"
-            onChange={(e) => {
-              handleInputChange(e, "inputTranscription", setInputState);
-              handleInputTranscriptionCheck(e, setInputState);
             }}
           />
-          <input
-            className={
-              errorValues.inputTranslation === true
-                ? "added-word-error"
-                : "added-word"
+          <Input
+            error={
+              errorValues.inputTranscription ||
+              errorValues.inputTranscriptionFormat
             }
+            value={inputs.inputTranscription}
+            handleInputChange={(e) =>
+              handleInputChange(e, "inputTranscription", setInputState)
+            }
+          />
+          <Input
+            error={errorValues.inputTranslation}
             value={inputs.inputTranslation}
-            type="text"
-            onChange={(e) => {
-              handleInputChange(e, "inputTranslation", setInputState);
-              handleCheckCyrillicPattern(e, "inputTranslation", setInputState);
-            }}
-          ></input>
-          <input
-            className={
-              errorValues.inputTopic === true
-                ? "added-word-error"
-                : "added-word"
+            handleInputChange={(e) =>
+              handleInputChange(e, "inputTranslation", setInputState)
             }
+          />
+          <Input
+            error={errorValues.inputTopic}
             value={inputs.inputTopic}
-            type="text"
-            onChange={(e) => {
-              handleInputChange(e, "inputTopic", setInputState);
-              handleCheckCyrillicPattern(e, "inputTopic", setInputState);
-            }}
-          ></input>
+            handleInputChange={(e) =>
+              handleInputChange(e, "inputTopic", setInputState)
+            }
+          />
+
           <div className="buttons-container">
             <Button
               class="button-save"
