@@ -28,7 +28,7 @@ const SignUp = () => {
         setPassword("");
         navigate("/dictionary");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => setError(`Password should be at least 6 characters`));
   }
   return (
     <main className="main-signup">
