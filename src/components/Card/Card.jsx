@@ -25,16 +25,15 @@ function Card(props) {
     inputTopic: props.topic,
   });
 
-  const validateOfName = useValidationOfWords(/^[A-Z]+$/i, inputs.inputName);
+  const validateOfName = useValidationOfWords(inputs.inputName, /^[A-Z]+$/i);
   const validateOfTranscription = useValidationOfWords(
-    false,
     inputs.inputTranscription
   );
   const validateOfTranslation = useValidationOfWords(
-    /^[А-ЯЁ]+$/i,
-    inputs.inputTranslation
+    inputs.inputTranslation,
+    /^[А-ЯЁ]+$/i
   );
-  const validateOfTopic = useValidationOfWords(/^[А-ЯЁ]+$/i, inputs.inputTopic);
+  const validateOfTopic = useValidationOfWords(inputs.inputTopic, /^[А-ЯЁ]+$/i);
 
   const [errorValues, setErrorValue] = useState({
     inputName: false,

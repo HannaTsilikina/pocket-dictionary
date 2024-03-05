@@ -1,7 +1,7 @@
 //if pattern is false, only transcription style '[]' check
-export default function useValidationOfWords(pattern, valueOfInput) {
+export default function useValidationOfWords(valueOfInput, pattern) {
   let result;
-  if (pattern === false) {
+  if (!pattern) {
     const validateParams = {
       inputError: false,
       value: valueOfInput,
