@@ -1,47 +1,46 @@
-import Card from "../Card/Card";
+import Loader from "components/AppUI/Loaders/Loader";
+import { ContextOfWords } from "components/Contexts/ContextWords/ContextWords";
+import { useContext } from "react";
 import "../../assets/styles/styleAppMain.scss";
+import Card from "../Card/Card";
 import "../Card/CardStyle.scss";
-import listOfWords from "../../store/store";
-
-let listOfCards;
-{
-  !listOfWords
-    ? (listOfCards = () => {
-        return (
-          <h1>
-            Возникли проблемы на сервере, пожалуйста, напишите в службу
-            поддержки{" "}
-          </h1>
-        );
-      })
-    : (listOfCards = listOfWords.map((element) => {
-        return (
-          <>
-            <Card
-              key={element.id}
-              name={element.english}
-              transcription={element.transcription}
-              translation={element.russian}
-              topic={element.tags}
-              new={element.new}
-              main={element.main}
-            />
-          </>
-        );
-      }));
-}
 
 function CardsList() {
+  const { listOfWords, loading, error } = useContext(ContextOfWords);
+
   return (
     <main className="cardsList-container">
       <Card
-        name="Слово"
-        transcription="Транскрипция"
-        translation="Перевод"
-        topic="Категория"
+        name="Russian word"
+        transcription="Transcription"
+        translation="Translation"
+        topic="Category"
         main={true}
       />
-      {listOfCards}
+
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <h1>
+          If you have problems on the server, please contact the support service
+        </h1>
+      ) : (
+        listOfWords.map((element) => {
+          return (
+            <>
+              <Card
+                key={element.id}
+                name={element.english}
+                transcription={element.transcription}
+                translation={element.russian}
+                topic={element.tags}
+                new={element.new}
+                main={element.main}
+              />
+            </>
+          );
+        })
+      )}
     </main>
   );
 }

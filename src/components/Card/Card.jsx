@@ -33,7 +33,7 @@ function Card(props) {
     inputs.inputTranslation,
     /^[А-ЯЁ]+$/i
   );
-  const validateOfTopic = useValidationOfWords(inputs.inputTopic, /^[А-ЯЁ]+$/i);
+  const validateOfTopic = useValidationOfWords(inputs.inputTopic, /^[A-Z]+$/i);
 
   const [errorValues, setErrorValue] = useState({
     inputName: false,
