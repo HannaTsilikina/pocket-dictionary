@@ -5,15 +5,18 @@ import { HashRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import { ContextUserProvider } from "components/Contexts/ContextUser/ContextUser";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ContextOfWordsProvider>
-      <HashRouter>
-        <App />
-      </HashRouter>
-    </ContextOfWordsProvider>
+    <ContextUserProvider>
+      <ContextOfWordsProvider>
+        <HashRouter>
+          <App />
+        </HashRouter>
+      </ContextOfWordsProvider>
+    </ContextUserProvider>
   </React.StrictMode>
 );
 

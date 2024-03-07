@@ -1,39 +1,33 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { auth } from "../../../firebase";
 import "./SignUp.scss";
-import { useNavigate } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
+import { ContextUser } from "components/Contexts/ContextUser/ContextUser";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 const SignUp = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [copyPassword, setcopyPassword] = useState("");
-  const [error, setError] = useState("");
   const [checkedInput, setCheckedInput] = useState(false);
+  const {
+    password,
+    error,
+    email,
+    copyPassword,
+    register,
+    setEmail,
+    setPassword,
+    setcopyPassword,
+  } = useContext(ContextUser);
   const navigate = useNavigate();
 
-  function register(event) {
-    event.preventDefault();
-    if (password !== copyPassword) {
-      setError("Sorry, your password didn't match.   Please, try again");
-      return;
-    }
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((user) => {
-        console.log(user);
-        setError("");
-        setEmail("");
-        setcopyPassword("");
-        setPassword("");
-        navigate("/dictionary");
-      })
-      .catch((err) => setError(`Password should be at least 6 characters`));
-  }
   return (
     <main className="main-signup">
       <h2>Create an account</h2>
-      <form className="form-register" onSubmit={register}>
+      <form
+        className="form-register"
+        onSubmit={(e) => {
+          e.preventDefault();
+          register(navigate);
+        }}
+      >
         <input
           value={email}
           className="input-register"
@@ -65,8 +59,7 @@ const SignUp = () => {
             }}
           />
           <label htmlFor="input-privacy">
-            {" "}
-            I agree with{" "}
+            I agree with
             <Link to="/privatypolicy">
               <a className="href-underline">Privacy Policy</a>
             </Link>
