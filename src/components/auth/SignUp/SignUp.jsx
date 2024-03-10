@@ -1,5 +1,5 @@
 import "./SignUp.scss";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { ContextUser } from "components/Contexts/ContextUser/ContextUser";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
