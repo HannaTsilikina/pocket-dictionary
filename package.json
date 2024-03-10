@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
+  "proxy": "http://itgirlschool.justmakeit.ru",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -18,8 +19,7 @@
     "react-router": "^6.21.2",
     "react-router-dom": "^6.21.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "proxy": "http://itgirlschool.justmakeit.ru"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

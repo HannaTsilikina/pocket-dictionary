@@ -124,7 +124,6 @@ function CardAddingInputs(props) {
               error={errorValues.inputName}
               value={inputs.inputName}
               handleInputChange={(e) => {
-                // console.log(inputs);
                 handleInputChange(e, "inputName", setInputState);
               }}
             />
@@ -135,7 +134,6 @@ function CardAddingInputs(props) {
               }
               value={inputs.inputTranscription}
               handleInputChange={(e) => {
-                // setInputState({ ...inputs, inputTranscription: "" });
                 handleInputChange(e, "inputTranscription", setInputState);
               }}
             />
@@ -143,7 +141,6 @@ function CardAddingInputs(props) {
               error={errorValues.inputTranslation}
               value={inputs.inputTranslation}
               handleInputChange={(e) => {
-                // setInputState({ ...inputs, inputTranslation: "" });
                 handleInputChange(e, "inputTranslation", setInputState);
               }}
             />
@@ -151,7 +148,6 @@ function CardAddingInputs(props) {
               error={errorValues.inputTopic}
               value={inputs.inputTopic}
               handleInputChange={(e) => {
-                // setInputState({ ...inputs, inputTopic: e.target.value });
                 handleInputChange(e, "inputTopic", setInputState);
               }}
             />
