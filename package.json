@@ -18,21 +18,9 @@
     "react-router": "^6.21.2",
     "react-router-dom": "^6.21.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "proxy": "http://itgirlschool.justmakeit.ru"
   },
- 
-    "proxy": {
-      "/search": {
-        "target": "https://www.google.com",
-        "changeOrigin": true
-      },
-      "/api": {
-        "target": "http://itgirlschool.justmakeit.ru",
-        "changeOrigin": true
-      }
-    },
-
-  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
