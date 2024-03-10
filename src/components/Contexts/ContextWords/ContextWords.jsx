@@ -9,7 +9,7 @@ const ContextOfWordsProvider = (props) => {
     setListOfWords(newArray);
   };
   useEffect(() => {
-    fetch("http://itgirlschool.justmakeit.ru/api/words")
+    fetch("https://itgirlschool.justmakeit.ru/api/words")
       .then((response) => {
         if (response.ok) return response.json();
         else {
@@ -27,7 +27,7 @@ const ContextOfWordsProvider = (props) => {
   }, []);
 
   const deleteWord = (idOfWord) => {
-    fetch(`http://itgirlschool.justmakeit.ru/api/words/${idOfWord}/delete`, {
+    fetch(`https://itgirlschool.justmakeit.ru/api/words/${idOfWord}/delete`, {
       method: "POST",
     })
       .then((res) => res.json())
@@ -42,7 +42,7 @@ const ContextOfWordsProvider = (props) => {
       russian: wordInfo.inputTranslation,
       tags: wordInfo.inputTopic,
     };
-    fetch(`http://itgirlschool.justmakeit.ru/api/words/${idOfWord}/update`, {
+    fetch(`https://itgirlschool.justmakeit.ru/api/words/${idOfWord}/update`, {
       method: "POST",
       body: JSON.stringify(item),
     })
@@ -58,7 +58,7 @@ const ContextOfWordsProvider = (props) => {
       russian: wordInfo.inputTranslation,
       tags: wordInfo.inputTopic,
     };
-    fetch(`http://itgirlschool.justmakeit.ru/api/words/add`, {
+    fetch(`https://itgirlschool.justmakeit.ru/api/words/add`, {
       method: "POST",
       body: JSON.stringify(item),
     })
