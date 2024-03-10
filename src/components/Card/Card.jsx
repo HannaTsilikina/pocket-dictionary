@@ -1,22 +1,30 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "../AppUI/Buttons/Button";
 import Input from "components/AppUI/Input/Input";
 import useValidationOfWords from "hooks/useValidationOfWords";
+import { ContextOfWords } from "components/Contexts/ContextWords/ContextWords";
 
 function Card(props) {
+  const { changedWord, deleteWord } = useContext(ContextOfWords);
+
   const [edit, setEdit] = useState(false);
   const handleEdit = () => {
     setEdit(!edit);
+    changedWord(props.id, inputs);
   };
   const [deleted, setDeleted] = useState(false);
+
   const handleDelete = () => {
     setDeleted(!deleted);
+    deleteWord(props.id);
   };
+
   const handleSave = () => {
     setEdit(!edit);
     console.log(
       `name: ${inputs.inputName}, transcription: ${inputs.inputTranscription}, translation: ${inputs.inputTranslation}, topic: ${inputs.inputTopic}`
     );
+    changedWord(props.id, inputs);
   };
   const [inputs, setInputState] = useState({
     inputName: props.name,
@@ -106,7 +114,13 @@ function Card(props) {
         <h3>{props.transcription}</h3>
         <h3> {props.translation}</h3>
         <h3>{props.topic}</h3>
-        <div className="buttons-container"></div>
+        <div className="buttons-container">
+          <Button
+            className="button-save"
+            text="Add a new Word"
+            onclick={props.handleAdding}
+          />
+        </div>
       </div>
     );
   if (edit && !deleted)
@@ -147,15 +161,15 @@ function Card(props) {
 
           <div className="buttons-container">
             <Button
-              class="button-save"
+              className="button-save"
               text="Save"
               onclick={handleSave}
               disabledButton={Object.values(errorValues).includes(true)}
             />
             <Button
-              class="button-delete"
+              className="button-delete"
               text="Delete"
-              onclick={handleDelete}
+              onclick={() => handleDelete(props.id)}
             />
           </div>
         </div>
@@ -171,11 +185,15 @@ function Card(props) {
           <h3> {inputs.inputTranslation}</h3>
           <h4> {inputs.inputTopic}</h4>
           <div className="buttons-container">
-            <Button class="button-change" text="Change" onclick={handleEdit} />
             <Button
-              class="button-delete"
+              className="button-change"
+              text="Change"
+              onclick={handleEdit}
+            />
+            <Button
+              className="button-delete"
               text="Delete"
-              onclick={handleDelete}
+              onclick={() => handleDelete(props.id)}
             />
           </div>
         </div>

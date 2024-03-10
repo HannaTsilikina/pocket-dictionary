@@ -8,7 +8,7 @@ function Button(props) {
     );
   } else {
     return (
-      <button className={props.class} onClick={props.onclick}>
+      <button className={props.className} onClick={props.onclick}>
         {props.text}
       </button>
     );

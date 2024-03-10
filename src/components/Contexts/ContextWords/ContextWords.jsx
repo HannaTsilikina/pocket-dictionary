@@ -20,12 +20,63 @@ const ContextOfWordsProvider = (props) => {
         changeListOfWords(response);
         setLoading(false);
       })
-      .catch((err) => setError(err));
+      .catch((err) => {
+        setLoading(false);
+        setError(err);
+      });
   }, []);
+
+  const deleteWord = (idOfWord) => {
+    fetch(`http://itgirlschool.justmakeit.ru/api/words/${idOfWord}/delete`, {
+      method: "POST",
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(`deleted ${idOfWord}`));
+  };
+
+  const changedWord = (idOfWord, wordInfo) => {
+    const item = {
+      id: idOfWord,
+      english: wordInfo.inputName,
+      transcription: wordInfo.inputTranscription,
+      russian: wordInfo.inputTranslation,
+      tags: wordInfo.inputTopic,
+    };
+    fetch(`http://itgirlschool.justmakeit.ru/api/words/${idOfWord}/update`, {
+      method: "POST",
+      body: JSON.stringify(item),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(`changed ${idOfWord}`));
+  };
+
+  const addedWord = (wordInfo, id) => {
+    const item = {
+      id: id,
+      english: wordInfo.inputName,
+      transcription: wordInfo.inputTranscription,
+      russian: wordInfo.inputTranslation,
+      tags: wordInfo.inputTopic,
+    };
+    fetch(`http://itgirlschool.justmakeit.ru/api/words/add`, {
+      method: "POST",
+      body: JSON.stringify(item),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(item));
+  };
 
   return (
     <ContextOfWords.Provider
-      value={{ listOfWords, setListOfWords, loading, error }}
+      value={{
+        listOfWords,
+        setListOfWords,
+        loading,
+        error,
+        deleteWord,
+        changedWord,
+        addedWord,
+      }}
     >
       {props.children}
     </ContextOfWords.Provider>

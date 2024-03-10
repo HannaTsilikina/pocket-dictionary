@@ -1,8 +1,9 @@
 import Loader from "components/AppUI/Loaders/Loader";
+import CardAddingInputs from "components/CardAddingInputs/CardAddingIntuts";
 import { ContextOfWords } from "components/Contexts/ContextWords/ContextWords";
+import Card from "components/Card/Card";
 import { useContext } from "react";
 import "../../assets/styles/styleAppMain.scss";
-import Card from "../Card/Card";
 import "../Card/CardStyle.scss";
 
 function CardsList() {
@@ -10,14 +11,7 @@ function CardsList() {
 
   return (
     <main className="cardsList-container">
-      <Card
-        name="Russian word"
-        transcription="Transcription"
-        translation="Translation"
-        topic="Category"
-        main={true}
-      />
-
+      <CardAddingInputs />
       {loading ? (
         <Loader />
       ) : error ? (
@@ -30,6 +24,7 @@ function CardsList() {
             <>
               <Card
                 key={element.id}
+                id={element.id}
                 name={element.english}
                 transcription={element.transcription}
                 translation={element.russian}
