@@ -1,16 +1,17 @@
-import NotFound from "components/NotFound/NotFound";
-import TrainMode from "components/TrainMode/TrainMode";
+import Authorization from "components/auth/Authorization/Authorization";
 import PrivatyPolicy from "components/auth/PrivatyPolicy/PrivatyPolicy";
 import SignIn from "components/auth/SignIn/SignIn";
 import SignUp from "components/auth/SignUp/SignUp";
-import { Route, Routes } from "react-router-dom";
 import CardList from "components/CardList/CardList";
-import Authorization from "components/auth/Authorization/Authorization";
+import NotFound from "components/NotFound/NotFound";
+import TrainMode from "components/TrainMode/TrainMode";
+import { ContextOfWords } from "Providers/ContextWords/ContextWords";
 import { useContext } from "react";
-import { ContextOfWords } from "components/Contexts/ContextWords/ContextWords";
+import { Route, Routes } from "react-router-dom";
 
 const MainContainer = () => {
   const { listOfWords } = useContext(ContextOfWords);
+
   return (
     <Routes>
       <Route path="/dictionary" element={<CardList />} />

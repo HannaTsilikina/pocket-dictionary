@@ -1,11 +1,11 @@
-import { ContextOfWordsProvider } from "components/Contexts/ContextWords/ContextWords";
+import { ContextUserProvider } from "Providers/ContextUser/ContextUser";
+import { ContextOfWordsProvider } from "Providers/ContextWords/ContextWords";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { ContextUserProvider } from "components/Contexts/ContextUser/ContextUser";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

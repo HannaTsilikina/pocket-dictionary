@@ -1,14 +1,13 @@
 import Loader from "components/AppUI/Loaders/Loader";
-import CardAddingInputs from "components/CardAddingInputs/CardAddingIntuts";
-import { ContextOfWords } from "components/Contexts/ContextWords/ContextWords";
 import Card from "components/Card/Card";
+import CardAddingInputs from "components/CardAddingInputs/CardAddingIntuts";
+import { ContextOfWords } from "Providers/ContextWords/ContextWords";
 import { useContext } from "react";
 import "../../assets/styles/styleAppMain.scss";
 import "../Card/CardStyle.scss";
 
 function CardsList() {
   const { listOfWords, loading, error } = useContext(ContextOfWords);
-
   return (
     <main className="cardsList-container">
       <CardAddingInputs />

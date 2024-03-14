@@ -1,4 +1,10 @@
 import React, { useState, useEffect, createContext } from "react";
+import {
+  getWordsApi,
+  changedWordApi,
+  deleteWordApi,
+  addedWordApi,
+} from "API/words";
 const ContextOfWords = createContext();
 
 const ContextOfWordsProvider = (props) => {
@@ -9,29 +15,21 @@ const ContextOfWordsProvider = (props) => {
     setListOfWords(newArray);
   };
   useEffect(() => {
-    fetch("https://itgirlschool.justmakeit.ru/api/words")
-      .then((response) => {
-        if (response.ok) return response.json();
-        else {
-          throw new Error("Something went wrong");
-        }
-      })
-      .then((response) => {
-        changeListOfWords(response);
+    getWordsApi()
+      .then(function (response) {
+        changeListOfWords(response.data);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(function (err) {
         setLoading(false);
         setError(err);
       });
-  }, []);
+  }, [listOfWords]);
 
   const deleteWord = (idOfWord) => {
-    fetch(`https://itgirlschool.justmakeit.ru/api/words/${idOfWord}/delete`, {
-      method: "POST",
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(`deleted ${idOfWord}`));
+    deleteWordApi(idOfWord).then(function (response) {
+      console.log(`deleted ${idOfWord}`);
+    });
   };
 
   const changedWord = (idOfWord, wordInfo) => {
@@ -42,12 +40,9 @@ const ContextOfWordsProvider = (props) => {
       russian: wordInfo.inputTranslation,
       tags: wordInfo.inputTopic,
     };
-    fetch(`https://itgirlschool.justmakeit.ru/api/words/${idOfWord}/update`, {
-      method: "POST",
-      body: JSON.stringify(item),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(`changed ${idOfWord}`));
+    changedWordApi(item).then(function (response) {
+      console.log(`changed ${idOfWord}`);
+    });
   };
 
   const addedWord = (wordInfo, id) => {
@@ -58,12 +53,9 @@ const ContextOfWordsProvider = (props) => {
       russian: wordInfo.inputTranslation,
       tags: wordInfo.inputTopic,
     };
-    fetch(`https://itgirlschool.justmakeit.ru/api/words/add`, {
-      method: "POST",
-      body: JSON.stringify(item),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(item));
+    addedWordApi(item).then(function (response) {
+      console.log(`added ` + id);
+    });
   };
 
   return (

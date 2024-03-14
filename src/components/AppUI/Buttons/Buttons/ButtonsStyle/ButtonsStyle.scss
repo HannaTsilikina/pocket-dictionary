@@ -18,25 +18,31 @@
 .button-save:hover {
   color: $blackColor;
   background-color: $secondColor;
+  transition-delay: 0.2s;
 }
 .button-save:active {
   text-decoration: underline;
   background-color: $secondColor;
+  transition-delay: 0.2s;
 }
 .button-change:hover {
   color: $blackColor;
   border: 1px solid $secondColor;
+  transition-delay: 0.2s;
 }
 .button-change:active {
   text-decoration: underline;
   background-color: $secondColor;
+  transition-delay: 0.2s;
 }
 
 .button-celete:hover {
   text-decoration: underline;
+  transition-delay: 0.2s;
 }
 .button-delete:active {
   font-weight: $fontWeightBold;
+  transition-delay: 0.2s;
 }
 :disabled {
   background-color: $secondColor;

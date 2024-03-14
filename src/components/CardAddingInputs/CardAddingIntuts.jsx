@@ -1,9 +1,9 @@
+import Input from "components/AppUI/Input/Input";
+import Card from "components/Card/Card";
+import useValidationOfWords from "hooks/useValidationOfWords";
+import { ContextOfWords } from "Providers/ContextWords/ContextWords";
 import { useContext, useEffect, useState } from "react";
 import Button from "../AppUI/Buttons/Button";
-import Card from "components/Card/Card";
-import Input from "components/AppUI/Input/Input";
-import useValidationOfWords from "hooks/useValidationOfWords";
-import { ContextOfWords } from "components/Contexts/ContextWords/ContextWords";
 
 function CardAddingInputs(props) {
   const { addedWord, listOfWords } = useContext(ContextOfWords);
@@ -160,7 +160,7 @@ function CardAddingInputs(props) {
                 disabledButton={Object.values(errorValues).includes(true)}
               />
               <Button
-                className="button-save"
+                className="button-change"
                 text="Exit"
                 onclick={handleChangeMode}
               />
@@ -179,7 +179,7 @@ function CardAddingInputs(props) {
           translation="Translation"
           topic="Category"
           main={true}
-          handleAdding={handleAdding}
+          handleAdding={handleChangeMode}
         />
       </>
     );

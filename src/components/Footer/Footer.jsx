@@ -4,11 +4,7 @@ import { NavLink } from "react-router-dom";
 function Footer() {
   return (
     <footer className="footer-container">
-      <a
-        className="logo"
-        href="http://localhost:3000/HannaTsilikina/pocket-dictionary"
-        alt="logo-href"
-      >
+      <a className="logo" href="/" alt="logo-href">
         <img className="image-logo" src={logo} alt="logo"></img>
         <span className="text-logo">PocketEnglish</span>
       </a>

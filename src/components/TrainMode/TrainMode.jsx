@@ -1,20 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import ReactCardFlip from "react-card-flip";
 import "./TrainMode.scss";
 import LearnCard from "../LearnCard/LearnCard";
-import listOfWords from "store/store";
+import { ContextOfWords } from "Providers/ContextWords/ContextWords";
 import arrowRight from "assets/images/right-arrow.png";
 import arrowLeft from "assets/images/left-arrow.png";
+import { NavLink } from "react-router-dom";
 
-export default function TrainMode(props) {
+function TrainMode(props) {
+  const { listOfWords } = useContext(ContextOfWords);
   const [isFlipped, setFlipped] = useState(false);
   const [number, setNumber] = useState(props.number);
-  const [learned, setLearned] = useState(props.learned);
+  const [learnedWords, setLearnedWords] = useState([]);
   const [countOfLearnedWords, setCountOfLearnedWords] = useState(0);
   const [training, setTraining] = useState(false);
 
   const ref = useRef();
-
   useEffect(() => {
     if (ref.current) {
       ref.current.focus();
@@ -23,7 +24,7 @@ export default function TrainMode(props) {
 
   const handleChangeNumber = () => {
     setFlipped(false);
-    if (number >= props.array.length - 1) {
+    if (number >= listOfWords.length - 1) {
       setNumber(props.number);
       setTraining(true);
     } else setNumber(number + 1);
@@ -37,9 +38,8 @@ export default function TrainMode(props) {
 
   const handleChangeFlipped = () => {
     setFlipped(!isFlipped);
-
-    setLearned(true);
-    if (countOfLearnedWords < 12) {
+    setLearnedWords([listOfWords[number].id, ...learnedWords]);
+    if (countOfLearnedWords < listOfWords.length) {
       setCountOfLearnedWords(countOfLearnedWords + 1);
     }
   };
@@ -49,9 +49,9 @@ export default function TrainMode(props) {
         The training is over. <br /> Your result : {countOfLearnedWords} learned
         words
       </h2>
-      <a href="/dictionary">
+      <NavLink className="header-hrefs" to="/dictionary">
         <button className="button-save">{"Back to dictionary"}</button>
-      </a>
+      </NavLink>
     </main>
   ) : (
     <main className="trainmode-main">
@@ -71,7 +71,7 @@ export default function TrainMode(props) {
               <LearnCard
                 card={listOfWords[number]}
                 onClick={handleChangeFlipped}
-                learned={learned}
+                learned={learnedWords}
                 ref={ref}
               />
               <LearnCard card={listOfWords[number]} checked={true} />
@@ -84,7 +84,7 @@ export default function TrainMode(props) {
       </div>
 
       <span className="trainMode-counter">
-        {number + 1}/{props.array.length}
+        {number + 1}/{listOfWords.length}
       </span>
       <span className="learned-words-count">
         Learned {countOfLearnedWords} words
@@ -92,3 +92,4 @@ export default function TrainMode(props) {
     </main>
   );
 }
+export default TrainMode;

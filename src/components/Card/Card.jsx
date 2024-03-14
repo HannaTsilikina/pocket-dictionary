@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from "react";
-import Button from "../AppUI/Buttons/Button";
 import Input from "components/AppUI/Input/Input";
 import useValidationOfWords from "hooks/useValidationOfWords";
-import { ContextOfWords } from "components/Contexts/ContextWords/ContextWords";
+import { ContextOfWords } from "Providers/ContextWords/ContextWords";
+import { useContext, useEffect, useState } from "react";
+import Button from "../AppUI/Buttons/Button";
 
 function Card(props) {
   const { changedWord, deleteWord } = useContext(ContextOfWords);
@@ -10,7 +10,6 @@ function Card(props) {
   const [edit, setEdit] = useState(false);
   const handleEdit = () => {
     setEdit(!edit);
-    changedWord(props.id, inputs);
   };
   const [deleted, setDeleted] = useState(false);
 
@@ -21,9 +20,6 @@ function Card(props) {
 
   const handleSave = () => {
     setEdit(!edit);
-    console.log(
-      `name: ${inputs.inputName}, transcription: ${inputs.inputTranscription}, translation: ${inputs.inputTranslation}, topic: ${inputs.inputTopic}`
-    );
     changedWord(props.id, inputs);
   };
   const [inputs, setInputState] = useState({
@@ -117,7 +113,7 @@ function Card(props) {
         <div className="buttons-container">
           <Button
             className="button-save"
-            text="Add a new Word"
+            text="Add a new word"
             onclick={props.handleAdding}
           />
         </div>

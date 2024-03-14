@@ -1,8 +1,8 @@
-import "./SignUp.scss";
-import { useState, useContext } from "react";
-import { ContextUser } from "components/Contexts/ContextUser/ContextUser";
-import { Link } from "react-router-dom";
+import { ContextUser } from "Providers/ContextUser/ContextUser";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import "./SignUp.scss";
 
 const SignUp = () => {
   const [checkedInput, setCheckedInput] = useState(false);

@@ -2,11 +2,16 @@ import { forwardRef } from "react";
 import "./LearnCard.scss";
 
 let LearnCard = forwardRef((props, ref) => {
+  let learnedArray = props.learned;
   return (
     <div key={props.card.id} className="learncard-container">
       <h3 className="main">{props.card.english}</h3>
       <span>{props.card.transcription}</span>
-      {props.checked ? (
+      {learnedArray && learnedArray.includes(props.card.id) ? (
+        <>
+          <span className="translation-word">{props.card.russian}</span>
+        </>
+      ) : props.checked ? (
         <>
           <span className="translation-word">{props.card.russian}</span>
         </>
@@ -15,7 +20,6 @@ let LearnCard = forwardRef((props, ref) => {
           {"check "}
         </button>
       )}
-      {/* {props.learned ? } */}
     </div>
   );
 });
