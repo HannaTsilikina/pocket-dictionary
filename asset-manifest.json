@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "./static/css/main.0440320c.css",
-    "main.js": "./static/js/main.99bc58ac.js",
+    "main.css": "./static/css/main.37b58a1d.css",
+    "main.js": "./static/js/main.b90c63aa.js",
     "static/js/787.f30bcd89.chunk.js": "./static/js/787.f30bcd89.chunk.js",
     "static/media/logo.png": "./static/media/logo.3a20396ae015918ad487.png",
     "static/media/ugly-cat.png": "./static/media/ugly-cat.2014a9e9077b3593e7bb.png",
     "static/media/close-arrow.svg": "./static/media/close-arrow.3679f386ffd792ab51f2aac881e12083.svg",
     "index.html": "./index.html",
     "static/media/burger-menu.svg": "./static/media/burger-menu.3d8db99dc14bc32ec13ae347bb682bce.svg",
-    "main.0440320c.css.map": "./static/css/main.0440320c.css.map",
-    "main.99bc58ac.js.map": "./static/js/main.99bc58ac.js.map",
+    "main.37b58a1d.css.map": "./static/css/main.37b58a1d.css.map",
+    "main.b90c63aa.js.map": "./static/js/main.b90c63aa.js.map",
     "787.f30bcd89.chunk.js.map": "./static/js/787.f30bcd89.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0440320c.css",
-    "static/js/main.99bc58ac.js"
+    "static/css/main.37b58a1d.css",
+    "static/js/main.b90c63aa.js"
   ]
 }
