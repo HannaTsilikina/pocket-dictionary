@@ -1,6 +1,6 @@
 import AuthDetails from "components/auth/AuthDetails/AuthDetails";
 import { NavLink, Outlet } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import logo from "../../assets/images/logo.png";
 import icon from "assets/images/burger-menu.svg";
 import closeArrow from "assets/images/close-arrow.svg";
