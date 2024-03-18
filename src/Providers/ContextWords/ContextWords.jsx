@@ -14,6 +14,7 @@ const ContextOfWordsProvider = (props) => {
   const changeListOfWords = (newArray) => {
     setListOfWords(newArray);
   };
+
   useEffect(() => {
     getWordsApi()
       .then(function (response) {

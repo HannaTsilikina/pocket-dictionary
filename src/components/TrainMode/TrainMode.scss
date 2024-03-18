@@ -6,7 +6,6 @@
 .trainmode-main {
   @include textCenterCol;
   gap: 3vh;
-  margin: 5vh;
 }
 .train-arr {
   max-width: 30px;
@@ -33,4 +32,14 @@
   max-width: 40vw;
   text-align: center;
   line-height: 1.5;
+}
+
+@media (max-width: 870px) {
+  .react-card-flip {
+    width: 30vw;
+    margin: 5px 0px;
+  }
+  .learned-words-count {
+    font: $fontMainBoldS;
+  }
 }

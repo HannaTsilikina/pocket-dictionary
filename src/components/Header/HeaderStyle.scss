@@ -8,7 +8,7 @@
   justify-content: space-between;
   width: 100%;
   gap: 5em;
-  padding: 30px 20px;
+  padding: 3vw 2vw;
   border-bottom: 1px solid;
   box-sizing: border-box;
   border-color: $mainColor;
@@ -17,17 +17,24 @@
   top: 0;
   background-color: white;
 }
+.logo {
+  box-sizing: border-box;
+  @include textCenterRow;
+  gap: 3px;
+}
 .header-hrefs {
   font: $fontMainBlackM;
   text-decoration: none;
   color: $blackColor;
 }
 
-nav {
+.header__nav {
   @include textCenterRow;
   justify-content: space-between;
-  gap: 1em;
-  width: 100%;
+  gap: 2vw;
+}
+.header__menu-button {
+  display: none;
 }
 .button-main {
   @include button-main;
@@ -40,13 +47,14 @@ nav {
   gap: 15px;
 }
 .logo {
+  box-sizing: border-box;
   @include textCenterRow;
   gap: 3px;
-  max-width: 20%;
+  justify-content: flex-start;
 }
 .image-logo {
-  width: 30%;
-  height: 30%;
+  width: 10vw;
+  max-width: 100px;
 }
 
 .text-logo {
@@ -58,4 +66,85 @@ a {
 }
 .active {
   text-decoration: underline;
+}
+
+@media (max-width: 870px) {
+  // .image-logo {
+  //   width: 10vw
+  // }
+
+  .text-logo {
+    font: $fontMainBlackM;
+  }
+  .header-hrefs {
+    font: $fontMainBlackS;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-container {
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+    .logo {
+      justify-content: flex-end;
+    }
+  }
+  .header__nav {
+    position: fixed;
+    top: 0;
+    left: -225px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid $mainColor;
+    border-radius: 0px 16px 16px 0px;
+    transition: transform 0.5s linear;
+    gap: 5vw;
+    width: 220px;
+    height: 50%;
+    justify-content: flex-start;
+    padding: 20vw 0;
+  }
+  .header__nav.clicked {
+    transform: translateX(100%);
+  }
+
+  .header__menu-button {
+    display: block;
+    background: white;
+    border: none;
+    z-index: 200;
+    .burger-menu {
+      width: 30px;
+      height: 30px;
+      color: $blackColor;
+
+      background-color: transparent;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .active {
+    text-decoration: underline;
+  }
+
+  .auth-check {
+    padding-top: 70%;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header__nav {
+    gap: 4vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .text-logo {
+    font: $fontMainBlackS;
+  }
 }

@@ -84,7 +84,7 @@ function TrainMode(props) {
       </div>
 
       <span className="trainMode-counter">
-        {number + 1}/{listOfWords.length}
+        Completed {number + 1}/{listOfWords.length}
       </span>
       <span className="learned-words-count">
         Learned {countOfLearnedWords} words

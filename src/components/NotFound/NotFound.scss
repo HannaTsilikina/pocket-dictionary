@@ -8,7 +8,6 @@
   @include textCenterCol;
   gap: 5vh;
   width: 70vw;
-  margin: 4em 1em;
   flex: 1 1 auto;
 
   h1 {
@@ -31,4 +30,10 @@
 }
 .button-main {
   @include button-main;
+}
+
+@media (max-width: 870px) {
+  .span-notfound {
+    font: $fontMainBoldM;
+  }
 }

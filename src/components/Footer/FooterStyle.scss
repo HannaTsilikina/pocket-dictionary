@@ -8,23 +8,22 @@
   justify-content: space-between;
   width: 100%;
   gap: 10px;
-  padding: 4% 2%;
+  padding: 3vw 2vw;
   border-bottom: 1px solid;
   box-sizing: border-box;
   border-color: $mainColor;
   background-color: $secondColor;
-
   margin-top: auto;
+
+  .logo {
+    justify-content: flex-start;
+  }
 }
 
 .logo {
   @include textCenterRow;
   gap: 3px;
-  max-width: 20%;
-}
-.image-logo {
-  width: 30%;
-  height: 30%;
+  // max-width: 20%;
 }
 
 .text-logo {
@@ -44,8 +43,8 @@ a {
 
 .footer-links {
   @include textCenterRow;
-  padding: 10px 50px;
-  gap: 50px;
+  padding: 10px 0px;
+  gap: 2vw;
   a {
     font: $fontMainBlackM;
     color: $blackColor;
@@ -54,4 +53,28 @@ a {
 }
 .active {
   text-decoration: underline;
+}
+
+@media (max-width: 870px) {
+  .footer-links {
+    a {
+      font: $fontMainBlackS;
+      gap: 2vw;
+    }
+
+    @include textCenterRow;
+    padding: 1% 0%;
+    gap: 2vw;
+  }
+
+  .text-logo {
+    font: $fontMainBlackM;
+  }
+}
+@media (max-width: 500px) {
+  .footer-links {
+    a {
+      font: $fontMainBlackXS;
+    }
+  }
 }

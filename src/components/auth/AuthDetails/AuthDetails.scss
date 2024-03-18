@@ -13,7 +13,7 @@
 .button-logOut {
   border-radius: 5px;
   font: $fontMainRegularS;
-  padding: 10px 20px;
+  padding: 1vw 2vw;
   border-radius: 10px;
   border: none;
   background-color: $secondColor;
@@ -22,4 +22,15 @@
 }
 .authdetails-text {
   font: $fontMainRegularS;
+  text-align: right;
+}
+
+@media (max-width: 870px) {
+  .authdetails-text {
+    font: $fontMainRegularXS;
+    text-align: right;
+  }
+  .button-logOut {
+    font: $fontMainRegularXS;
+  }
 }
