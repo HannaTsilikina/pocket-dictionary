@@ -28,9 +28,6 @@
   font-style: italic;
   max-width: 30%;
 }
-.button-main {
-  @include button-main;
-}
 
 @media (max-width: 870px) {
   .span-notfound {

@@ -5,7 +5,6 @@
 
 .button-change {
   @include button-secondary;
-  font: $fontMainBoldXS;
 }
 
 .button-delete {
@@ -47,4 +46,14 @@
 :disabled {
   background-color: $secondColor;
   color: $greycolor;
+}
+@media (max-width: 700px) {
+  .button-change,
+  .button-delete,
+  .button-save,
+  .button-main,
+  .button-secondary {
+    font: $fontMainBoldXS;
+    padding: 1.2vw 2.5vw;
+  }
 }

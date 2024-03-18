@@ -1,6 +1,6 @@
 import AuthDetails from "components/auth/AuthDetails/AuthDetails";
 import { NavLink, Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../assets/images/logo.png";
 import icon from "assets/images/burger-menu.svg";
 import closeArrow from "assets/images/close-arrow.svg";
@@ -10,7 +10,7 @@ export default function Header() {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <header className="header-container">
+    <header onClick={() => setOpen(!isOpen)} className="header-container">
       <a className="logo" href="/" alt="logo-href">
         <img className="image-logo" src={logo} alt="logo"></img>
         <span className="text-logo">PocketEnglish</span>

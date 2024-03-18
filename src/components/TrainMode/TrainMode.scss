@@ -26,8 +26,12 @@
 .learned-words-count {
   margin-top: 5px;
   font: $fontMainBoldM;
+  text-decoration: underline;
 }
-
+.trainMode-counter {
+  margin-top: 5px;
+  font: $fontMainBoldS;
+}
 .text-finish {
   max-width: 40vw;
   text-align: center;

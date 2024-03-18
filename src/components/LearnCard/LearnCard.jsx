@@ -6,7 +6,7 @@ let LearnCard = forwardRef((props, ref) => {
   return (
     <div key={props.card.id} className="learncard-container">
       <h3 className="main">{props.card.english}</h3>
-      <span>{props.card.transcription}</span>
+      <span className="main">{props.card.transcription}</span>
       {learnedArray && learnedArray.includes(props.card.id) ? (
         <>
           <span className="translation-word">{props.card.russian}</span>

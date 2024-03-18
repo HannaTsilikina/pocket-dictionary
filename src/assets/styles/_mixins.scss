@@ -17,7 +17,7 @@
   justify-content: center;
 }
 @mixin button-main {
-  font: $fontMainBoldXS;
+  font: $fontMainBoldS;
   padding: 1vw 2vw;
   border-radius: 10px;
   border: none;
@@ -27,7 +27,7 @@
 }
 
 @mixin button-secondary {
-  font: $fontMainBoldXS;
+  font: $fontMainBoldS;
   padding: 1vw 2vw;
   border-radius: 10px;
   border: 1px solid $mainColor;
@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 @mixin button-delete {
-  font: $fontMainBoldXS;
+  font: $fontMainBoldS;
   padding: 1vw 2vw;
   border-radius: 10px;
   border: 1px solid $secondColor;

@@ -113,7 +113,7 @@ function Card(props) {
         <div className="buttons-container">
           <Button
             className="button-save"
-            text="Add a new word"
+            text="New word"
             onclick={props.handleAdding}
           />
         </div>
@@ -179,7 +179,7 @@ function Card(props) {
           <h3>{inputs.inputName}</h3>
           <h3>{inputs.inputTranscription}</h3>
           <h3> {inputs.inputTranslation}</h3>
-          <h4> {inputs.inputTopic}</h4>
+          <h3> {inputs.inputTopic}</h3>
           <div className="buttons-container">
             <Button
               className="button-change"
