@@ -121,79 +121,79 @@ function Card(props) {
     );
   if (edit && !deleted)
     return (
-      <div className="card-main">
-        <div className="card-container" key={props.id}>
-          <Input
-            error={errorValues.inputName}
-            value={inputs.inputName}
-            handleInputChange={(e) => {
-              handleInputChange(e, "inputName", setInputState);
-            }}
-          />
-          <Input
-            error={
-              errorValues.inputTranscription ||
-              errorValues.inputTranscriptionFormat
-            }
-            value={inputs.inputTranscription}
-            handleInputChange={(e) =>
-              handleInputChange(e, "inputTranscription", setInputState)
-            }
-          />
-          <Input
-            error={errorValues.inputTranslation}
-            value={inputs.inputTranslation}
-            handleInputChange={(e) =>
-              handleInputChange(e, "inputTranslation", setInputState)
-            }
-          />
-          <Input
-            error={errorValues.inputTopic}
-            value={inputs.inputTopic}
-            handleInputChange={(e) =>
-              handleInputChange(e, "inputTopic", setInputState)
-            }
-          />
+      // <div className="card-main">
+      <div className="card-container" key={props.id}>
+        <Input
+          error={errorValues.inputName}
+          value={inputs.inputName}
+          handleInputChange={(e) => {
+            handleInputChange(e, "inputName", setInputState);
+          }}
+        />
+        <Input
+          error={
+            errorValues.inputTranscription ||
+            errorValues.inputTranscriptionFormat
+          }
+          value={inputs.inputTranscription}
+          handleInputChange={(e) =>
+            handleInputChange(e, "inputTranscription", setInputState)
+          }
+        />
+        <Input
+          error={errorValues.inputTranslation}
+          value={inputs.inputTranslation}
+          handleInputChange={(e) =>
+            handleInputChange(e, "inputTranslation", setInputState)
+          }
+        />
+        <Input
+          error={errorValues.inputTopic}
+          value={inputs.inputTopic}
+          handleInputChange={(e) =>
+            handleInputChange(e, "inputTopic", setInputState)
+          }
+        />
 
-          <div className="buttons-container">
-            <Button
-              className="button-save"
-              text="Save"
-              onclick={handleSave}
-              disabledButton={Object.values(errorValues).includes(true)}
-            />
-            <Button
-              className="button-delete"
-              text="Delete"
-              onclick={() => handleDelete(props.id)}
-            />
-          </div>
+        <div className="buttons-container">
+          <Button
+            className="button-save"
+            text="Save"
+            onclick={handleSave}
+            disabledButton={Object.values(errorValues).includes(true)}
+          />
+          <Button
+            className="button-delete"
+            text="Delete"
+            onclick={() => handleDelete(props.id)}
+          />
         </div>
+        {/* </div> */}
         <p>{errorMessage}</p>
       </div>
     );
   if (!edit && !deleted)
     return (
-      <div className="card-main">
-        <div className="card-container" key={props.id}>
-          <h3>{inputs.inputName}</h3>
-          <h3>{inputs.inputTranscription}</h3>
-          <h3> {inputs.inputTranslation}</h3>
-          <h3> {inputs.inputTopic}</h3>
-          <div className="buttons-container">
-            <Button
-              className="button-change"
-              text="Change"
-              onclick={handleEdit}
-            />
-            <Button
-              className="button-delete"
-              text="Delete"
-              onclick={() => handleDelete(props.id)}
-            />
-          </div>
+      // <div className="card-main">
+      <div className="card-container" key={props.id}>
+        <h3>{inputs.inputName}</h3>
+        <h3>{inputs.inputTranscription}</h3>
+        <h3> {inputs.inputTranslation}</h3>
+        <h3> {inputs.inputTopic}</h3>
+        <div className="buttons-container">
+          <Button
+            className="button-change"
+            text="Change"
+            onclick={handleEdit}
+          />
+          <Button
+            className="button-delete"
+            text="Delete"
+            onclick={() => handleDelete(props.id)}
+          />
         </div>
       </div>
+      // </div>
     );
   if (deleted) return null;
 }

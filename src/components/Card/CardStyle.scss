@@ -7,33 +7,38 @@
   font: $fontMainRegularS;
   @include textGrid;
   justify-items: center;
-  padding: 5px 0px;
+  padding: 10px;
   width: 100%;
   box-sizing: border-box;
   text-align: center;
   align-items: center;
   color: $blackColor;
+  gap: 1vw;
 }
-.card-main {
-  font: $fontMainRegularS;
-  color: $errorColor;
-  justify-items: center;
-  padding: 5px 20px;
-  border-bottom: 1px solid rgb(215, 227, 248);
-  width: 100%;
-  box-sizing: border-box;
-  justify-content: flex-start;
-}
+// .card-main {
+//   font: $fontMainRegularS;
+//   color: $errorColor;
+//   justify-items: center;
+//   flex-wrap: wrap;
+//   padding: 5px 20px;
+//   border-bottom: 1px solid rgb(215, 227, 248);
+//   width: 100%;
+//   box-sizing: border-box;
+//   justify-content: flex-start;
+// }
 .card-main-container {
   font: $fontMainRegularM;
   @include textGrid;
-  padding: 15px;
+  gap: 1vw;
+  padding: 15px 10px;
   border-bottom: 1px solid rgb(215, 227, 248);
   width: 100%;
   box-sizing: border-box;
   background-color: $secondColor;
+  color: $blackColor;
   justify-items: center;
   align-items: center;
+  text-align: center;
 }
 
 .added-word {

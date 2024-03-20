@@ -5,6 +5,7 @@ import { ContextOfWords } from "Providers/ContextWords/ContextWords";
 import { useContext } from "react";
 import "../../assets/styles/styleAppMain.scss";
 import "../Card/CardStyle.scss";
+import "./CardList.scss";
 
 function CardsList() {
   const { listOfWords, loading, error } = useContext(ContextOfWords);

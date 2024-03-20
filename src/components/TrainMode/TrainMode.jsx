@@ -49,7 +49,7 @@ function TrainMode(props) {
         The training is over. <br /> Your result : {countOfLearnedWords} learned
         words
       </h2>
-      <NavLink className="header-hrefs" to="/dictionary">
+      <NavLink className="header-hrefs" to="/main/main">
         <button className="button-save">{"Back to dictionary"}</button>
       </NavLink>
     </main>

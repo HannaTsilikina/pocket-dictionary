@@ -49,7 +49,7 @@ const SignUp = () => {
           onChange={(e) => setcopyPassword(e.target.value)}
           type="password"
         />
-        <div>
+        <div className="signup-agreed">
           <input
             type="checkbox"
             checked={checkedInput}
@@ -61,7 +61,7 @@ const SignUp = () => {
           <label htmlFor="input-privacy">
             I agree with
             <Link to="/privatypolicy">
-              <a className="href-underline">Privacy Policy</a>
+              <a className=" a-margin href-underline">Privacy Policy</a>
             </Link>
           </label>
         </div>

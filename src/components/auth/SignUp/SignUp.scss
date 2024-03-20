@@ -21,3 +21,11 @@
   text-decoration: underline;
   color: $blackColor;
 }
+.signup-agreed {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.a-margin {
+  margin-left: 5px;
+}

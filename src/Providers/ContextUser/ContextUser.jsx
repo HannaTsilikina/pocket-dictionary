@@ -22,7 +22,7 @@ const ContextUserProvider = (props) => {
         setEmail("");
         setcopyPassword("");
         setPassword("");
-        navigate("/dictionary");
+        navigate("/main");
       })
       .catch((err) => setError(`Password should be at least 6 characters`));
   }
@@ -46,4 +46,4 @@ const ContextUserProvider = (props) => {
   );
 };
 
-export { ContextUser, ContextUserProvider };
+export { ContextUserProvider, ContextUser };

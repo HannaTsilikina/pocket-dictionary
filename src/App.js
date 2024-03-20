@@ -1,17 +1,10 @@
-import "./assets/styles/styleAppMain.scss";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import MainContainer from "components/MainContainer/MainContainer";
+import Navigation from "components/auth/Navigation/Navigation";
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <Header />
-        <MainContainer />
-        <Footer />
-      </div>
-    </>
+    <div className="App">
+      <Navigation />
+    </div>
   );
 }
 

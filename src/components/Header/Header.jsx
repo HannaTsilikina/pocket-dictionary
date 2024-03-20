@@ -16,10 +16,10 @@ export default function Header() {
         <span className="text-logo">PocketEnglish</span>
       </a>
       <nav className={`header__nav ${isOpen ? "clicked" : ""}`}>
-        <NavLink className="header-hrefs" to="/game">
+        <NavLink className="header-hrefs" to="game">
           Start to learn
         </NavLink>
-        <NavLink className="header-hrefs" to="/dictionary">
+        <NavLink className="header-hrefs" to="main">
           My dictionary
         </NavLink>
         <NavLink className="header-hrefs " to="*">
