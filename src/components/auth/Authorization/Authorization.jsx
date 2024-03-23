@@ -1,6 +1,11 @@
 import { NavLink } from "react-router-dom";
-import RegistrationAnimation from "components/AppUI/Animations/RegistrationAnimation";
+import React from "react";
 import "./Authorization.scss";
+import helloCat from "assets/images/hello-cat.jpg";
+// import RegistrationAnimation from "components/AppUI/Animations/RegistrationAnimation";
+// const RegistrationAnimation = React.lazy(() =>
+//   import("components/AppUI/Animations/RegistrationAnimation")
+// );
 
 const Authorization = () => {
   return (
@@ -24,7 +29,8 @@ const Authorization = () => {
             <button className="button-secondary"> No</button>
           </NavLink>
         </div>
-        <RegistrationAnimation />
+        <img className="animation-register" src={helloCat} alt="arrow" />
+        {/* <RegistrationAnimation /> */}
       </div>
     </main>
   );

@@ -5,7 +5,7 @@ import AnimationReg from "./registration.json";
 const RegistrationAnimation = () => {
   const options = {
     animationData: AnimationReg,
-    loop: true,
+    loop: false,
   };
 
   const { View } = useLottie(options);

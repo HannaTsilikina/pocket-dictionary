@@ -22,8 +22,8 @@ const AuthDetails = () => {
   function userSignedOut() {
     signOut(auth)
       .then(() => console.log("success"))
-      .catch((err) => console.log(err));
-    navigate("/");
+      .catch((err) => console.log(err))
+      .finally(() => navigate("/"));
   }
   return (
     <div>
@@ -31,22 +31,11 @@ const AuthDetails = () => {
         <div className="auth-check">
           {" "}
           <p className="authdetails-text"> {`Signed as ${authUser.email}`}</p>
-          <button className="button-logOut" onClick={userSignedOut}>
+          <button className="button-secondary" onClick={userSignedOut}>
             Signed out
           </button>
         </div>
-      ) : (
-        <>
-          <div className="log">
-            <NavLink to="/signin">
-              <button className="button-main">Sign in</button>
-            </NavLink>
-            <NavLink to="/signup">
-              <button className="button-secondary">Sign up</button>
-            </NavLink>
-          </div>
-        </>
-      )}
+      ) : null}
     </div>
   );
 };

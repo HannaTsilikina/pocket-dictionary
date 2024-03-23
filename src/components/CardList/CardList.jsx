@@ -20,6 +20,7 @@ function CardsList() {
         </h1>
       ) : (
         listOfWords.map((element) => {
+          console.log(element);
           return (
             <>
               <Card

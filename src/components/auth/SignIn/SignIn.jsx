@@ -17,7 +17,7 @@ const SignIn = () => {
         setError("");
         setEmail("");
         setPassword("");
-        navigate("/main");
+        navigate("/main/dictionary");
       })
       .catch((err) => {
         console.log(err);

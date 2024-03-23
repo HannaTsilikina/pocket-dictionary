@@ -9,13 +9,13 @@ function Footer() {
         <span className="text-logo">PocketEnglish</span>
       </a>
       <div className="footer-links">
-        <NavLink className="footer-hrefs " to="*">
+        <NavLink className="footer-hrefs " to="partners">
           Our partners
         </NavLink>
-        <NavLink className="footer-hrefs " to="*">
+        <NavLink className="footer-hrefs " to="support">
           Support
         </NavLink>
-        <NavLink className="footer-hrefs " to="*">
+        <NavLink className="footer-hrefs " to="links">
           Useful links
         </NavLink>
       </div>

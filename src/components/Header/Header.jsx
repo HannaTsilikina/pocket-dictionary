@@ -19,13 +19,13 @@ export default function Header() {
         <NavLink className="header-hrefs" to="game">
           Start to learn
         </NavLink>
-        <NavLink className="header-hrefs" to="main">
+        <NavLink className="header-hrefs" to="dictionary">
           My dictionary
         </NavLink>
-        <NavLink className="header-hrefs " to="*">
+        <NavLink className="header-hrefs " to="about">
           About
         </NavLink>
-        <NavLink className="header-hrefs" to="*">
+        <NavLink className="header-hrefs" to="help">
           Help
         </NavLink>
         <AuthDetails />
@@ -37,7 +37,6 @@ export default function Header() {
           alt="burger-menu"
         />
       </button>
-      <Outlet />
     </header>
   );
 }

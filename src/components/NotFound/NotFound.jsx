@@ -10,7 +10,7 @@ export default function NotFound() {
         <span className="span-notfound"> Page 404 Not Found</span>
         <NotFoundAnimation />
       </div>
-      <Link className="notfound" to="/main/main">
+      <Link className="notfound" to="/main/dictionary">
         <button className="button-main">Back to home page</button>
       </Link>
     </main>

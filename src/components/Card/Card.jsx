@@ -29,15 +29,21 @@ function Card(props) {
     inputTopic: props.topic,
   });
 
-  const validateOfName = useValidationOfWords(inputs.inputName, /^[A-Z]+$/i);
+  const validateOfName = useValidationOfWords(
+    inputs.inputName.trim(),
+    /^[A-Z]+$/i
+  );
   const validateOfTranscription = useValidationOfWords(
-    inputs.inputTranscription
+    inputs.inputTranscription.trim()
   );
   const validateOfTranslation = useValidationOfWords(
-    inputs.inputTranslation,
+    inputs.inputTranslation.trim(),
     /^[А-ЯЁ]+$/i
   );
-  const validateOfTopic = useValidationOfWords(inputs.inputTopic, /^[A-Z]+$/i);
+  const validateOfTopic = useValidationOfWords(
+    inputs.inputTopic.trim(),
+    /^[A-Z]+$/i
+  );
 
   const [errorValues, setErrorValue] = useState({
     inputName: false,
@@ -106,22 +112,23 @@ function Card(props) {
   if (!props.new && props.main)
     return (
       <div className="card-main-container" key={props.id}>
-        <h3>{props.name}</h3>
-        <h3>{props.transcription}</h3>
-        <h3> {props.translation}</h3>
-        <h3>{props.topic}</h3>
-        <div className="buttons-container">
-          <Button
-            className="button-save"
-            text="New word"
-            onclick={props.handleAdding}
-          />
+        <div className="card-container" key={props.id}>
+          <h3>{props.name}</h3>
+          <h3>{props.transcription}</h3>
+          <h3> {props.translation}</h3>
+          <h3>{props.topic}</h3>
+          <div className="buttons-container">
+            <Button
+              className="button-save"
+              text="New word"
+              onclick={props.handleAdding}
+            />
+          </div>
         </div>
       </div>
     );
   if (edit && !deleted)
     return (
-      // <div className="card-main">
       <div className="card-container" key={props.id}>
         <Input
           error={errorValues.inputName}
@@ -160,7 +167,7 @@ function Card(props) {
             className="button-save"
             text="Save"
             onclick={handleSave}
-            disabledButton={Object.values(errorValues).includes(true)}
+            disabled={Object.values(errorValues).includes(true) ? true : false}
           />
           <Button
             className="button-delete"
@@ -168,32 +175,25 @@ function Card(props) {
             onclick={() => handleDelete(props.id)}
           />
         </div>
-        {/* </div> */}
+
         <p>{errorMessage}</p>
       </div>
     );
   if (!edit && !deleted)
     return (
-      // <div className="card-main">
       <div className="card-container" key={props.id}>
         <h3>{inputs.inputName}</h3>
         <h3>{inputs.inputTranscription}</h3>
         <h3> {inputs.inputTranslation}</h3>
         <h3> {inputs.inputTopic}</h3>
-        <div className="buttons-container">
-          <Button
-            className="button-change"
-            text="Change"
-            onclick={handleEdit}
-          />
-          <Button
-            className="button-delete"
-            text="Delete"
-            onclick={() => handleDelete(props.id)}
-          />
-        </div>
+
+        <Button className="button-change" text="Change" onclick={handleEdit} />
+        <Button
+          className="button-delete"
+          text="Delete"
+          onclick={() => handleDelete(props.id)}
+        />
       </div>
-      // </div>
     );
   if (deleted) return null;
 }

@@ -10,16 +10,7 @@
   justify-content: center;
   align-items: flex-end;
 }
-.button-logOut {
-  border-radius: 5px;
-  font: $fontMainRegularS;
-  padding: 1vw 2vw;
-  border-radius: 10px;
-  border: none;
-  background-color: $secondColor;
-  color: $greycolor;
-  cursor: pointer;
-}
+
 .authdetails-text {
   font: $fontMainRegularS;
   text-align: right;
