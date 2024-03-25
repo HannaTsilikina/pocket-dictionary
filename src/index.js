@@ -1,21 +1,28 @@
 import { ContextUserProvider } from "Providers/ContextUser/ContextUser";
-import { ContextOfWordsProvider } from "Providers/ContextWords/ContextWords";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import { Provider } from "mobx-react";
+import Store from "store/Store";
+// import WordsStore from "store/WordsStore";
+
+const words = {
+  // WordsStore: new WordsStore(),
+  store: new Store(),
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ContextUserProvider>
-      <ContextOfWordsProvider>
+      <Provider {...words}>
         <HashRouter>
           <App />
         </HashRouter>
-      </ContextOfWordsProvider>
+      </Provider>
     </ContextUserProvider>
   </React.StrictMode>
 );

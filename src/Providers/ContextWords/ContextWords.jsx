@@ -11,14 +11,11 @@ const ContextOfWordsProvider = (props) => {
   const [listOfWords, setListOfWords] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
-  const changeListOfWords = (newArray) => {
-    setListOfWords(newArray);
-  };
 
   useEffect(() => {
     getWordsApi()
       .then(function (response) {
-        changeListOfWords(response.data);
+        setListOfWords(response.data);
         setLoading(false);
       })
       .catch(function (err) {
