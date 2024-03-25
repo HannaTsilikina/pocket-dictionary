@@ -5,11 +5,44 @@ import { useEffect } from "react";
 import { getWordsApi } from "API/words";
 import { Route, Routes } from "react-router-dom";
 import { observer, inject } from "mobx-react";
+import { addedWordApi, changedWordApi, deleteWordApi } from "API/words";
+
+const deleteWord = (idOfWord) => {
+  deleteWordApi(idOfWord).then(function (response) {
+    console.log(`deleted ${idOfWord}`);
+  });
+};
+
+const changedWord = (idOfWord, wordInfo) => {
+  const item = {
+    id: idOfWord,
+    english: wordInfo.inputName,
+    transcription: wordInfo.inputTranscription,
+    russian: wordInfo.inputTranslation,
+    tags: wordInfo.inputTopic,
+  };
+  changedWordApi(item).then(function (response) {
+    console.log(`changed ${idOfWord}`);
+  });
+};
+
+const addedWord = (wordInfo, id) => {
+  const item = {
+    id: id,
+    english: wordInfo.inputName,
+    transcription: wordInfo.inputTranscription,
+    russian: wordInfo.inputTranslation,
+    tags: wordInfo.inputTopic,
+  };
+  addedWordApi(item).then(function (response) {
+    console.log(`added ` + id);
+  });
+};
 
 const MainContainer = inject(["store"])(
   observer(({ store }) => {
+    store.setLoading(true);
     useEffect(() => {
-      store.setLoading(true);
       getWordsApi()
         .then(function (response) {
           store.setListOfWords(response.data);
@@ -26,11 +59,11 @@ const MainContainer = inject(["store"])(
         <Route path="/dictionary" index element={<CardList />} />
         <Route
           path="/game"
-          element={<TrainMode array={listOfWords} number={0} />}
+          element={<TrainMode array={store.listOfWords} number={0} />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
     );
   })
 );
-export default MainContainer;
+export { MainContainer, addedWord, deleteWord, changedWord };

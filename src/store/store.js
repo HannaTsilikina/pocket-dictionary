@@ -1,3 +1,4 @@
+import React from "react";
 const { observable, action } = require("mobx");
 
 class Store extends React.Component {

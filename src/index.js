@@ -1,4 +1,3 @@
-import { ContextUserProvider } from "Providers/ContextUser/ContextUser";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
@@ -7,23 +6,24 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "mobx-react";
 import Store from "store/Store";
-// import WordsStore from "store/WordsStore";
+import StoreUser from "store/StoreUser";
 
 const words = {
-  // WordsStore: new WordsStore(),
   store: new Store(),
 };
-
+const user = {
+  user: new StoreUser(),
+};
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ContextUserProvider>
+    <Provider {...user}>
       <Provider {...words}>
         <HashRouter>
           <App />
         </HashRouter>
       </Provider>
-    </ContextUserProvider>
+    </Provider>
   </React.StrictMode>
 );
 

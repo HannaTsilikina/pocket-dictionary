@@ -1,12 +1,12 @@
 import Input from "components/AppUI/Input/Input";
 import useValidationOfWords from "hooks/useValidationOfWords";
-import { ContextOfWords } from "Providers/ContextWords/ContextWords";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../AppUI/Buttons/Button";
-
+import {
+  changedWord,
+  deleteWord,
+} from "components/MainContainer/MainContainer";
 function Card(props) {
-  const { changedWord, deleteWord } = useContext(ContextOfWords);
-
   const [edit, setEdit] = useState(false);
   const handleEdit = () => {
     setEdit(!edit);

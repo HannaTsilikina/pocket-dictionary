@@ -4,6 +4,7 @@ import CardAddingInputs from "components/CardAddingInputs/CardAddingIntuts";
 import "../../assets/styles/styleAppMain.scss";
 import "../Card/CardStyle.scss";
 import "./CardList.scss";
+import { observer, inject } from "mobx-react";
 
 const CardsList = inject(["store"])(
   observer(({ store }) => {
